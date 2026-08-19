@@ -120,49 +120,6 @@ namespace WorkorderService.Migrations
                     b.ToTable("WorkOrders");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderEvent", b =>
-                {
-                    b.Property<string>("WorkOrderEventId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Details")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ExternalSystemId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("OccurredAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SiteCodeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WorkOrderExternalId")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("WorkOrderId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WorkOrderStatusId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("WorkOrderEventId");
-
-                    b.HasIndex("ExternalSystemId");
-
-                    b.HasIndex("SiteCodeId");
-
-                    b.HasIndex("WorkOrderId");
-
-                    b.HasIndex("WorkOrderStatusId");
-
-                    b.ToTable("WorkOrderEvents");
-                });
-
             modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderHistory", b =>
                 {
                     b.Property<string>("WorkOrderHistoryId")
@@ -231,39 +188,6 @@ namespace WorkorderService.Migrations
                     b.Navigation("ExternalSystem");
 
                     b.Navigation("SiteCode");
-
-                    b.Navigation("WorkOrderStatus");
-                });
-
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderEvent", b =>
-                {
-                    b.HasOne("WorkOrderService.Models.ExternalSystem", "ExternalSystem")
-                        .WithMany()
-                        .HasForeignKey("ExternalSystemId");
-
-                    b.HasOne("WorkOrderService.Models.SiteCode", "SiteCode")
-                        .WithMany()
-                        .HasForeignKey("SiteCodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrder", "WorkOrder")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExternalSystem");
-
-                    b.Navigation("SiteCode");
-
-                    b.Navigation("WorkOrder");
 
                     b.Navigation("WorkOrderStatus");
                 });

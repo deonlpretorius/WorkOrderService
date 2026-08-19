@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WorkorderService.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedExternalSystems : Migration
+    public partial class RemovedWorkOrderEvents : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,6 +15,9 @@ namespace WorkorderService.Migrations
                 name: "FK_WorkOrders_SiteCodes_SiteCodeId",
                 table: "WorkOrders");
 
+            migrationBuilder.DropTable(
+                name: "WorkOrderEvents");
+
             migrationBuilder.DropColumn(
                 name: "ExternalId",
                 table: "WorkOrders");
@@ -22,10 +25,6 @@ namespace WorkorderService.Migrations
             migrationBuilder.DropColumn(
                 name: "Status",
                 table: "WorkOrderHistories");
-
-            migrationBuilder.DropColumn(
-                name: "Status",
-                table: "WorkOrderEvents");
 
             migrationBuilder.AlterColumn<string>(
                 name: "SiteCodeId",
@@ -50,25 +49,12 @@ namespace WorkorderService.Migrations
                 nullable: false,
                 defaultValue: "");
 
-            migrationBuilder.AddColumn<string>(
-                name: "ExternalSystemId",
-                table: "WorkOrderEvents",
-                type: "nvarchar(450)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "SiteCodeId",
-                table: "WorkOrderEvents",
-                type: "nvarchar(450)",
+            migrationBuilder.AddColumn<DateTime>(
+                name: "LastModified",
+                table: "SiteCodes",
+                type: "datetime2",
                 nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "WorkOrderStatusId",
-                table: "WorkOrderEvents",
-                type: "nvarchar(450)",
-                nullable: false,
-                defaultValue: "");
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.CreateTable(
                 name: "ExternalSystems",
@@ -77,6 +63,7 @@ namespace WorkorderService.Migrations
                     ExternalSystemId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ExternalSystemName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ExternalSystemDescription = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    ExternalSystemCode = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -93,44 +80,6 @@ namespace WorkorderService.Migrations
                 name: "IX_WorkOrderHistories_WorkOrderStatusId",
                 table: "WorkOrderHistories",
                 column: "WorkOrderStatusId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WorkOrderEvents_ExternalSystemId",
-                table: "WorkOrderEvents",
-                column: "ExternalSystemId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WorkOrderEvents_SiteCodeId",
-                table: "WorkOrderEvents",
-                column: "SiteCodeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WorkOrderEvents_WorkOrderStatusId",
-                table: "WorkOrderEvents",
-                column: "WorkOrderStatusId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_WorkOrderEvents_ExternalSystems_ExternalSystemId",
-                table: "WorkOrderEvents",
-                column: "ExternalSystemId",
-                principalTable: "ExternalSystems",
-                principalColumn: "ExternalSystemId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_WorkOrderEvents_SiteCodes_SiteCodeId",
-                table: "WorkOrderEvents",
-                column: "SiteCodeId",
-                principalTable: "SiteCodes",
-                principalColumn: "SiteCodeId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_WorkOrderEvents_WorkOrderStatuses_WorkOrderStatusId",
-                table: "WorkOrderEvents",
-                column: "WorkOrderStatusId",
-                principalTable: "WorkOrderStatuses",
-                principalColumn: "WorkOrderStatusId",
-                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_WorkOrderHistories_WorkOrderStatuses_WorkOrderStatusId",
@@ -160,18 +109,6 @@ namespace WorkorderService.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_WorkOrderEvents_ExternalSystems_ExternalSystemId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_WorkOrderEvents_SiteCodes_SiteCodeId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_WorkOrderEvents_WorkOrderStatuses_WorkOrderStatusId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropForeignKey(
                 name: "FK_WorkOrderHistories_WorkOrderStatuses_WorkOrderStatusId",
                 table: "WorkOrderHistories");
 
@@ -194,18 +131,6 @@ namespace WorkorderService.Migrations
                 name: "IX_WorkOrderHistories_WorkOrderStatusId",
                 table: "WorkOrderHistories");
 
-            migrationBuilder.DropIndex(
-                name: "IX_WorkOrderEvents_ExternalSystemId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropIndex(
-                name: "IX_WorkOrderEvents_SiteCodeId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropIndex(
-                name: "IX_WorkOrderEvents_WorkOrderStatusId",
-                table: "WorkOrderEvents");
-
             migrationBuilder.DropColumn(
                 name: "ExternalSystemId",
                 table: "WorkOrders");
@@ -215,16 +140,8 @@ namespace WorkorderService.Migrations
                 table: "WorkOrderHistories");
 
             migrationBuilder.DropColumn(
-                name: "ExternalSystemId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropColumn(
-                name: "SiteCodeId",
-                table: "WorkOrderEvents");
-
-            migrationBuilder.DropColumn(
-                name: "WorkOrderStatusId",
-                table: "WorkOrderEvents");
+                name: "LastModified",
+                table: "SiteCodes");
 
             migrationBuilder.AlterColumn<string>(
                 name: "SiteCodeId",
@@ -248,12 +165,32 @@ namespace WorkorderService.Migrations
                 nullable: false,
                 defaultValue: 0);
 
-            migrationBuilder.AddColumn<int>(
-                name: "Status",
+            migrationBuilder.CreateTable(
+                name: "WorkOrderEvents",
+                columns: table => new
+                {
+                    WorkOrderEventId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    WorkOrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OccurredAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    WorkOrderExternalId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WorkOrderEvents", x => x.WorkOrderEventId);
+                    table.ForeignKey(
+                        name: "FK_WorkOrderEvents_WorkOrders_WorkOrderId",
+                        column: x => x.WorkOrderId,
+                        principalTable: "WorkOrders",
+                        principalColumn: "WorkOrderId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WorkOrderEvents_WorkOrderId",
                 table: "WorkOrderEvents",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
+                column: "WorkOrderId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_WorkOrders_SiteCodes_SiteCodeId",

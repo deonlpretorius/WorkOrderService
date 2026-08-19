@@ -54,10 +54,10 @@ namespace WorkOrderService.Models
         public string? ExternalSystemCode { get; set; }
 
         /// <summary>
-        /// Property <c>LastModified</c> represents the date and time that the external system record has been modified.
-        /// <value>A datetime containing the lawst moedified date and time. Default is DateTime.Now</value>
+        /// Property <c>LastModified</c> represents the last modification date and time for the external systems record.
+        /// <value>A datetime containing the last modification date and time. Default is DateTime.Now</value>
         /// </summary>
         [Required]
-        public DateTime? LastModified {  get; set; }
+        public DateTime LastModified {  get; set; }
     }
 }

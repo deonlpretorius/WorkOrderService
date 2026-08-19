@@ -26,7 +26,7 @@ namespace WorkOrderService.Data
         /// <summary>
         /// Property <c>SiteCodes</c> represents the site codes table.
         /// </summary>
-        public DbSet<SiteCode> SiteCodes { get; set; }
+        public DbSet<Site> SiteCodes { get; set; }
 
         /// <summary>
         /// Property <c>ExternalSystem</c> represents the external systems table.
@@ -41,17 +41,7 @@ namespace WorkOrderService.Data
         /// <summary>
         /// Property <c>WorkOrders</c> represents the work orders table.
         /// </summary>
-        public DbSet<WorkOrder> WorkOrders { get; set; }
-
-        /// <summary>
-        /// Property <c>WorkOrderHistories</c> represents the work order histories table.
-        /// </summary>
-        public DbSet<WorkOrderHistory> WorkOrderHistories {  get; set; }
-
-        /// <summary>
-        /// Property <c>WorkOrderEvents</c> represents the work order events table.
-        /// </summary>
-        public DbSet<WorkOrderEvent> WorkOrderEvents { get; set; }
+        // public DbSet<WorkOrder> WorkOrders { get; set; }
 
         /// <summary>
         /// Method <c>OnModelCreating</c> is used to configure the data models.

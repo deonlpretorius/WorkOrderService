@@ -2,32 +2,32 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
-/// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
+/// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables for the application.
 /// </summary>
 namespace WorkOrderService.Models
 {
     /// <summary>
-    /// Class <c>SiteCode</c> represents the site codes table.
+    /// Class <c>SiteCode</c> represents the sites table.
     /// </summary>
-    [Table("SiteCodes")]
-    public class SiteCode
+    [Table("Sites")]
+    public class Site
     {
         /// <summary>
-        /// Constructor <c>SiteCode</c> is used to instantiate the SiteCodes data model.
+        /// Constructor <c>Site</c> is used to instantiate the Site data model.
         /// </summary>
-        public SiteCode()
+        public Site()
         {
-            SiteCodeId = Guid.NewGuid().ToString();
+            SiteId = Guid.NewGuid().ToString();
             LastModified = DateTime.Now;
         }
 
         /// <summary>
-        /// Property <c>SiteCodeId</c> represents the site code identifier for the table.
-        /// <value>A string containing the site code identifier.</value>
+        /// Property <c>SiteId</c> represents the identifier for the Sites table.
+        /// <value>A string containing the site identifier.</value>
         /// </summary>
         [Required]
         [Key]
-        public string? SiteCodeId { get; set; }
+        public string? SiteId { get; set; }
 
         /// <summary>
         /// Property <c>SiteName</c> represents the name of the site.
@@ -51,8 +51,12 @@ namespace WorkOrderService.Models
         /// </summary>
         [Required]
         [StringLength(10)]
-        public string? Code {  get; set; }
+        public string? SiteCode {  get; set; }
 
+        /// <summary>
+        /// Property <c>LastModified</c> represents the last modification date and time of the site record.
+        /// <value>A datetime containing the last modification date and time. Default is DateTime.Now</value>
+        /// </summary>
         [Required]
         public DateTime LastModified { get; set; }
     }
