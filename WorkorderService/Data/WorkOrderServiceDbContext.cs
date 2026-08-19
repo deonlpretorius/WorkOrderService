@@ -1,0 +1,33 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+/// <summary>
+/// Namespace <c>WorkOrderService.Data</c> contains the data access layer operations for the Work Order Service application.
+/// </summary>
+namespace WorkOrderService.Data
+{
+    /// <summary>
+    /// Class <c>WorkOrderServiceDbContext</c> represents the database access layer operations.
+    /// <remarks>
+    /// Inherits from DbContext <see cref="DbContext"/>
+    /// </remarks>
+    /// </summary>
+    public class WorkOrderServiceDbContext : DbContext
+    {
+        /// <summary>
+        /// Constructor <c>WorkOrderServiceDbContext</c> is used to instantiate the data access layer with options.
+        /// </summary>
+        /// <param name="options">The options for the data access layer context.</param>
+        public WorkOrderServiceDbContext(DbContextOptions<WorkOrderServiceDbContext> options) : base(options)
+        {
+        }
+
+        /// <summary>
+        /// Method <c>OnModelCreating</c> is used to configure the data models.
+        /// </summary>
+        /// <param name="modelBuilder">The class containing the model builder.</param>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}
