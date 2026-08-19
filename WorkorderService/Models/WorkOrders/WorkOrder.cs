@@ -85,7 +85,7 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>A class containing the site codes.</value>
         /// </summary>
         [Required]
-        public SiteCode? SiteCode { get; set; }
+        public Site? SiteCode { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderStatusId</c> represents the identifier for the work orders status table.

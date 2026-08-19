@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WorkOrderService.Enums;
 
 /// <summary>
-/// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
+/// Namespace <c>WorkOrderService.Models</c> contains the Work Order data models that represent the database tables.
 /// </summary>
 namespace WorkOrderService.Models.WorkOrders
 {
@@ -14,12 +13,12 @@ namespace WorkOrderService.Models.WorkOrders
     public class WorkOrderStatus
     {
         /// <summary>
-        /// Constructor <c>WorkOrderStatus</c> is used to instantiate the data model.
+        /// Constructor <c>WorkOrderStatus</c> is used to instantiate the Work Order Status data model.
         /// </summary>
         public WorkOrderStatus()
         {
             WorkOrderStatusId = Guid.NewGuid().ToString();
-            Status = WorkOrderStatusType.Pending;
+            Status = Enums.WorkOrderStatus.Pending;
         }
 
         /// <summary>
@@ -50,6 +49,6 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>An enum containing the work order status. Default is Pending.</value>
         /// </summary>
         [Required]
-        public WorkOrderStatusType Status {  get; set; }
+        public Enums.WorkOrderStatus Status {  get; set; }
     }
 }

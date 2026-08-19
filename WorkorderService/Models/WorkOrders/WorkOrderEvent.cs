@@ -92,7 +92,7 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>A class containing the site code data model.</value>
         /// </summary>
         [Required]
-        public SiteCode? SiteCode { get; set; }
+        public Site? SiteCode { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderId</c> represents the identifier for the work order related to the event.
