@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkOrderService.Data;
 
@@ -11,9 +12,11 @@ using WorkOrderService.Data;
 namespace WorkorderService.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
-    partial class WorkOrderServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260819144413_AddWorkOrderEvents")]
+    partial class AddWorkOrderEvents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,34 +24,6 @@ namespace WorkorderService.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("WorkOrderService.Models.ExternalSystem", b =>
-                {
-                    b.Property<string>("ExternalSystemId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ExternalSystemCode")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("ExternalSystemDescription")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("ExternalSystemName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("LastModified")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ExternalSystemId");
-
-                    b.ToTable("ExternalSystems");
-                });
 
             modelBuilder.Entity("WorkOrderService.Models.SiteCode", b =>
                 {
@@ -75,7 +50,7 @@ namespace WorkorderService.Migrations
                     b.ToTable("SiteCodes");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrder", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrder", b =>
                 {
                     b.Property<string>("WorkOrderId")
                         .HasColumnType("nvarchar(450)");
@@ -83,14 +58,14 @@ namespace WorkorderService.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ExternalSystemId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("ExternalId")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SiteCodeId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("WorkOrderDescription")
@@ -108,8 +83,6 @@ namespace WorkorderService.Migrations
 
                     b.HasKey("WorkOrderId");
 
-                    b.HasIndex("ExternalSystemId");
-
                     b.HasIndex("SiteCodeId");
 
                     b.HasIndex("WorkOrderStatusId");
@@ -117,7 +90,7 @@ namespace WorkorderService.Migrations
                     b.ToTable("WorkOrders");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderEvent", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrderEvent", b =>
                 {
                     b.Property<string>("WorkOrderEventId")
                         .HasColumnType("nvarchar(450)");
@@ -125,45 +98,33 @@ namespace WorkorderService.Migrations
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ExternalSystemId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("OccurredAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SiteCodeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("WorkOrderExternalId")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WorkOrderId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("WorkOrderStatusId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("WorkOrderEventId");
 
-                    b.HasIndex("ExternalSystemId");
-
-                    b.HasIndex("SiteCodeId");
-
                     b.HasIndex("WorkOrderId");
-
-                    b.HasIndex("WorkOrderStatusId");
 
                     b.ToTable("WorkOrderEvents");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderHistory", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrderHistory", b =>
                 {
                     b.Property<string>("WorkOrderHistoryId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -172,20 +133,14 @@ namespace WorkorderService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("WorkOrderStatusId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("WorkOrderHistoryId");
 
                     b.HasIndex("WorkOrderId");
 
-                    b.HasIndex("WorkOrderStatusId");
-
                     b.ToTable("WorkOrderHistories");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderStatus", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrderStatus", b =>
                 {
                     b.Property<string>("WorkOrderStatusId")
                         .HasColumnType("nvarchar(450)");
@@ -207,81 +162,43 @@ namespace WorkorderService.Migrations
                     b.ToTable("WorkOrderStatuses");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrder", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrder", b =>
                 {
-                    b.HasOne("WorkOrderService.Models.ExternalSystem", "ExternalSystem")
-                        .WithMany()
-                        .HasForeignKey("ExternalSystemId");
-
                     b.HasOne("WorkOrderService.Models.SiteCode", "SiteCode")
                         .WithMany()
-                        .HasForeignKey("SiteCodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SiteCodeId");
 
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
+                    b.HasOne("WorkOrderService.Models.WorkOrderStatus", "WorkOrderStatus")
                         .WithMany()
                         .HasForeignKey("WorkOrderStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ExternalSystem");
 
                     b.Navigation("SiteCode");
 
                     b.Navigation("WorkOrderStatus");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderEvent", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrderEvent", b =>
                 {
-                    b.HasOne("WorkOrderService.Models.ExternalSystem", "ExternalSystem")
-                        .WithMany()
-                        .HasForeignKey("ExternalSystemId");
-
-                    b.HasOne("WorkOrderService.Models.SiteCode", "SiteCode")
-                        .WithMany()
-                        .HasForeignKey("SiteCodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrder", "WorkOrder")
+                    b.HasOne("WorkOrderService.Models.WorkOrder", "WorkOrder")
                         .WithMany()
                         .HasForeignKey("WorkOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExternalSystem");
-
-                    b.Navigation("SiteCode");
-
                     b.Navigation("WorkOrder");
-
-                    b.Navigation("WorkOrderStatus");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderHistory", b =>
+            modelBuilder.Entity("WorkOrderService.Models.WorkOrderHistory", b =>
                 {
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrder", "WorkOrder")
+                    b.HasOne("WorkOrderService.Models.WorkOrder", "WorkOrder")
                         .WithMany()
                         .HasForeignKey("WorkOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("WorkOrder");
-
-                    b.Navigation("WorkOrderStatus");
                 });
 #pragma warning restore 612, 618
         }

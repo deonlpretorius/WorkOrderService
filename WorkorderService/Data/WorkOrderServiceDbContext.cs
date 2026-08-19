@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WorkOrderService.Models;
+using WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Data</c> contains the data access layer operations for the Work Order Service application.
@@ -28,6 +29,11 @@ namespace WorkOrderService.Data
         public DbSet<SiteCode> SiteCodes { get; set; }
 
         /// <summary>
+        /// Property <c>ExternalSystem</c> represents the external systems table.
+        /// </summary>
+        public DbSet<ExternalSystem> ExternalSystems {  get; set; }
+
+        /// <summary>
         /// Property <c>WorkOrderStatuses</c> represents the work order statuses table.
         /// </summary>
         public DbSet<WorkOrderStatus> WorkOrderStatuses { get; set; }
@@ -41,6 +47,11 @@ namespace WorkOrderService.Data
         /// Property <c>WorkOrderHistories</c> represents the work order histories table.
         /// </summary>
         public DbSet<WorkOrderHistory> WorkOrderHistories {  get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the work order events table.
+        /// </summary>
+        public DbSet<WorkOrderEvent> WorkOrderEvents { get; set; }
 
         /// <summary>
         /// Method <c>OnModelCreating</c> is used to configure the data models.

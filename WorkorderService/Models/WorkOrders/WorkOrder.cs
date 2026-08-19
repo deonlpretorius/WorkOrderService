@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models
+namespace WorkOrderService.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrder</c> represents the work orders table.
@@ -29,13 +29,6 @@ namespace WorkOrderService.Models
         [Required]
         [Key]
         public string? WorkOrderId { get; set; }
-
-        /// <summary>
-        /// Property <c>ExternalId</c> represents the identifier for the work order in an external system.
-        /// <value>A string containing the external system identifier. Default is Empty.</value>
-        /// </summary>
-        [StringLength(100)]
-        public string? ExternalId { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderName</c> represents the name of the work order.
@@ -67,9 +60,23 @@ namespace WorkOrderService.Models
         public DateTime LastModified {  get; set; }
 
         /// <summary>
+        /// Property <c>ExternalId</c> represents the identifier for the work order in an external system.
+        /// <value>A string containing the external system identifier. Default is Empty.</value>
+        /// </summary>
+        [ForeignKey("ExternalSystemId")]
+        public string? ExternalSystemId { get; set; }
+
+        /// <summary>
+        /// Property <c>ExternalSystem</c> represents the reference navigation for the external systems table.
+        /// <value>A class containing the external system data model. Default is Null.</value>
+        /// </summary>
+        public ExternalSystem? ExternalSystem { get; set; }
+
+        /// <summary>
         /// Property <c>SiteCodesId</c> represents the identifier for the site codes table.
         /// <value>A string containing the site code identifier.</value>
         /// </summary>
+        [Required]
         [ForeignKey("SiteCodes")]
         public string? SiteCodeId { get; set; }
 
@@ -77,7 +84,8 @@ namespace WorkOrderService.Models
         /// Property <c>SiteCode</c> represents the reference navigation for the site codes table.
         /// <value>A class containing the site codes.</value>
         /// </summary>
-        public SiteCode SiteCode { get; set; }
+        [Required]
+        public SiteCode? SiteCode { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderStatusId</c> represents the identifier for the work orders status table.
@@ -92,6 +100,6 @@ namespace WorkOrderService.Models
         /// <value>A class containing the work order status data model.</value>
         /// </summary>
         [Required]
-        public WorkOrderStatus WorkOrderStatus { get; set; }
+        public WorkOrderStatus? WorkOrderStatus { get; set; }
     }
 }

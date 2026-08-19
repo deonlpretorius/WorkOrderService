@@ -5,7 +5,7 @@ using WorkOrderService.Enums;
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models
+namespace WorkOrderService.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrderStatus</c> represents the work orders status table.
