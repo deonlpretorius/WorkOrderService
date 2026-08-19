@@ -18,6 +18,7 @@ namespace WorkOrderService.Models
         public SiteCode()
         {
             SiteCodeId = Guid.NewGuid().ToString();
+            LastModified = DateTime.Now;
         }
 
         /// <summary>
@@ -51,5 +52,8 @@ namespace WorkOrderService.Models
         [Required]
         [StringLength(10)]
         public string? Code {  get; set; }
+
+        [Required]
+        public DateTime LastModified { get; set; }
     }
 }

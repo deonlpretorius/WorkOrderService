@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkOrderService.Data;
 
@@ -11,9 +12,11 @@ using WorkOrderService.Data;
 namespace WorkorderService.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
-    partial class WorkOrderServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260819162633_ChangedWorkOrderStatus")]
+    partial class ChangedWorkOrderStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,9 +62,6 @@ namespace WorkorderService.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
-
-                    b.Property<DateTime>("LastModified")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("SiteDescription")
                         .IsRequired()
@@ -138,15 +138,14 @@ namespace WorkorderService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("WorkOrderExternalId")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("WorkOrderId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WorkOrderStatusId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -157,8 +156,6 @@ namespace WorkorderService.Migrations
                     b.HasIndex("SiteCodeId");
 
                     b.HasIndex("WorkOrderId");
-
-                    b.HasIndex("WorkOrderStatusId");
 
                     b.ToTable("WorkOrderEvents");
                 });
@@ -253,19 +250,11 @@ namespace WorkorderService.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("ExternalSystem");
 
                     b.Navigation("SiteCode");
 
                     b.Navigation("WorkOrder");
-
-                    b.Navigation("WorkOrderStatus");
                 });
 
             modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderHistory", b =>
