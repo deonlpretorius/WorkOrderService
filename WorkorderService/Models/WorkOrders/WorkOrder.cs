@@ -77,15 +77,15 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>A string containing the site code identifier.</value>
         /// </summary>
         [Required]
-        [ForeignKey("SiteCodes")]
-        public string? SiteCodeId { get; set; }
+        [ForeignKey("SiteId")]
+        public string? SiteId { get; set; }
 
         /// <summary>
         /// Property <c>SiteCode</c> represents the reference navigation for the site codes table.
         /// <value>A class containing the site codes.</value>
         /// </summary>
         [Required]
-        public Site? SiteCode { get; set; }
+        public Site? Site { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderStatusId</c> represents the identifier for the work orders status table.

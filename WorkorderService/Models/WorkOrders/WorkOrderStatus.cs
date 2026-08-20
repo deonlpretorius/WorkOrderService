@@ -51,5 +51,11 @@ namespace WorkOrderService.Models.WorkOrders
         [Required]
         public Enums.WorkOrderStatus Status {  get; set; }
 
+        /// <summary>
+        /// Property <c>WorkOrders</c> represents the work orders.
+        /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrder>? WorkOrders { get; set; }
+
     }
 }

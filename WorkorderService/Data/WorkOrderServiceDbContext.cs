@@ -60,6 +60,28 @@ namespace WorkOrderService.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Work Order Statuses.
+            modelBuilder.Entity<WorkOrderStatus>()
+                        .HasMany(w => w.WorkOrders)
+                        .WithOne(s => s.WorkOrderStatus)
+                        .HasForeignKey(s => s.WorkOrderStatusId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            // Sites.
+            modelBuilder.Entity<Site>()
+                        .HasMany(w => w.WorkOrders)
+                        .WithOne(s => s.Site)
+                        .HasForeignKey(s => s.SiteId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            // External Systems.
+            modelBuilder.Entity<ExternalSystem>()
+                        .HasMany(w => w.WorkOrders)
+                        .WithOne(e => e.ExternalSystem)
+                        .HasForeignKey(e => e.ExternalSystemId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

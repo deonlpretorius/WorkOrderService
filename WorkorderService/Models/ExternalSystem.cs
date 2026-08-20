@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
@@ -59,5 +60,11 @@ namespace WorkOrderService.Models
         /// </summary>
         [Required]
         public DateTime? LastModified {  get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrders</c> represents the collection of work orders.
+        /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrder>? WorkOrders { get; set; }
     }
 }
