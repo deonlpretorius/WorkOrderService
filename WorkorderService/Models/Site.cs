@@ -66,5 +66,7 @@ namespace WorkOrderService.Models
         /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
         /// </summary>
         public ICollection<WorkOrder>? WorkOrders { get; set; }
+
+        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
     }
 }

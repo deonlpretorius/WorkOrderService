@@ -84,15 +84,15 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>A string containing the site codes identifier.</value>
         /// </summary>
         [Required]
-        [ForeignKey("SiteCodeId")]
-        public string? SiteCodeId { get; set; }
+        [ForeignKey("SiteId")]
+        public string? SiteId { get; set; }
 
         /// <summary>
         /// Property <c>SiteCode</c> represents the reference navigation for the site codes table.
         /// <value>A class containing the site code data model.</value>
         /// </summary>
         [Required]
-        public Site? SiteCode { get; set; }
+        public Site? Site { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderId</c> represents the identifier for the work order related to the event.
