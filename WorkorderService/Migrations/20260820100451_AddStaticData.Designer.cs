@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkOrderService.Data;
 
@@ -11,9 +12,11 @@ using WorkOrderService.Data;
 namespace WorkorderService.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
-    partial class WorkOrderServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260820100451_AddStaticData")]
+    partial class AddStaticData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,48 +81,6 @@ namespace WorkorderService.Migrations
                     b.ToTable("SiteCodes");
                 });
 
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrder", b =>
-                {
-                    b.Property<string>("WorkOrderId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ExternalSystemId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("LastModified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SiteCodeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WorkOrderDescription")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("WorkOrderName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("WorkOrderStatusId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("WorkOrderId");
-
-                    b.HasIndex("ExternalSystemId");
-
-                    b.HasIndex("SiteCodeId");
-
-                    b.HasIndex("WorkOrderStatusId");
-
-                    b.ToTable("WorkOrders");
-                });
-
             modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrderStatus", b =>
                 {
                     b.Property<string>("WorkOrderStatusId")
@@ -140,31 +101,6 @@ namespace WorkorderService.Migrations
                     b.HasKey("WorkOrderStatusId");
 
                     b.ToTable("WorkOrderStatuses");
-                });
-
-            modelBuilder.Entity("WorkOrderService.Models.WorkOrders.WorkOrder", b =>
-                {
-                    b.HasOne("WorkOrderService.Models.ExternalSystem", "ExternalSystem")
-                        .WithMany()
-                        .HasForeignKey("ExternalSystemId");
-
-                    b.HasOne("WorkOrderService.Models.Site", "SiteCode")
-                        .WithMany()
-                        .HasForeignKey("SiteCodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WorkOrderService.Models.WorkOrders.WorkOrderStatus", "WorkOrderStatus")
-                        .WithMany()
-                        .HasForeignKey("WorkOrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExternalSystem");
-
-                    b.Navigation("SiteCode");
-
-                    b.Navigation("WorkOrderStatus");
                 });
 #pragma warning restore 612, 618
         }

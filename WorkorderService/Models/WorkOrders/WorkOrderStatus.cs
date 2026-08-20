@@ -50,5 +50,6 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         [Required]
         public Enums.WorkOrderStatus Status {  get; set; }
+
     }
 }

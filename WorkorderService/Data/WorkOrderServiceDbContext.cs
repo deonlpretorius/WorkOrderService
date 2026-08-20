@@ -41,7 +41,7 @@ namespace WorkOrderService.Data
         /// <summary>
         /// Property <c>WorkOrders</c> represents the work orders table.
         /// </summary>
-        // public DbSet<WorkOrder> WorkOrders { get; set; }
+        public DbSet<WorkOrder> WorkOrders { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderHistories</c> represents the work order histories table.
