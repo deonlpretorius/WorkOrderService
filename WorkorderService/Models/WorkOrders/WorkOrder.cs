@@ -52,6 +52,20 @@ namespace WorkOrderService.Models.WorkOrders
         public string? WorkOrderExternalId { get; set; }
 
         /// <summary>
+        /// Property <c>CreatedAt</c> representing the creation date and time of the work order.
+        /// <value>A datetime containing the creation date and time of the work order. Default is DateTime.Now.</value>
+        /// </summary>
+        [Required]
+        public DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// Property <c>LastModified</c> represents the last modofication date and time of the work order.
+        /// <value>A datetime containing the work order last modification date and time. Default is DateTime.Now.</value>
+        /// </summary>
+        [Required]
+        public DateTime LastModified { get; set; }
+
+        /// <summary>
         /// Property <c>ExternalId</c> represents the identifier for the work order in an external system.
         /// <value>A string containing the external system identifier. Default is Empty.</value>
         /// </summary>
@@ -100,6 +114,10 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         public ICollection<WorkOrderHistory>? WorkOrderHistories { get; set; }
 
-        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the collection of work order events.
+        /// <value>An interface representing the contract for the collection of work order events. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrderEvent>? WorkOrderEvents { get; set; }
     }
 }
