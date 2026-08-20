@@ -12,13 +12,8 @@ using WorkOrderService.Data;
 namespace WorkorderService.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
-<<<<<<<< HEAD:WorkorderService/Migrations/20260819191131_RemovedWorkOrderEvents.Designer.cs
-    [Migration("20260819191131_RemovedWorkOrderEvents")]
-    partial class RemovedWorkOrderEvents
-========
     [Migration("20260820124351_AddedWorkOrderHistory")]
     partial class AddedWorkOrderHistory
->>>>>>>> main:WorkorderService/Migrations/20260820124351_AddedWorkOrderHistory.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
