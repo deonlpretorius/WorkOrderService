@@ -18,6 +18,7 @@ namespace WorkOrderService.Models.WorkOrders
         public WorkOrderHistory()
         {
             WorkOrderHistoryId = Guid.NewGuid().ToString();
+            UpdatedAt = DateTime.Now;
         }
 
         /// <summary>

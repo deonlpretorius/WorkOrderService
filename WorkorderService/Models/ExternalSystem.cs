@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
@@ -13,7 +14,7 @@ namespace WorkOrderService.Models
     public class ExternalSystem
     {
         /// <summary>
-        /// Constructor <c>ExternalSystem</c> is used to instantiate the external system data model.
+        /// Constructor <c>ExternalSystem</c> is used to instantiate the External System data model.
         /// </summary>
         public ExternalSystem()
         {
@@ -54,10 +55,18 @@ namespace WorkOrderService.Models
         public string? ExternalSystemCode { get; set; }
 
         /// <summary>
-        /// Property <c>LastModified</c> represents the date and time that the external system record has been modified.
-        /// <value>A datetime containing the lawst moedified date and time. Default is DateTime.Now</value>
+        /// Property <c>LastModified</c> represents the last modification date and time for the external systems table record.
+        /// <value>A datetime containing the last modification date and time. Default is DateTime.Now.</value>
         /// </summary>
         [Required]
         public DateTime? LastModified {  get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrders</c> represents the collection of work orders.
+        /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrder>? WorkOrders { get; set; }
+
+        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
     }
 }

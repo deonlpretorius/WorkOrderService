@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkorderService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+444e4113be500c23da7b10c75ef1af310ed1601e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b650beaaf97c8b7c61de064bcc883d0ac661e61")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkorderService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkorderService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
