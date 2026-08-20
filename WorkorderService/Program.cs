@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WorkOrderService.Data;
+using WorkOrderService.Endpoints;
 using WorkOrderService.Interfaces;
 using WorkOrderService.Services;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
 
 // Add the DbContext to the service container
 builder.Services.AddDbContext<WorkOrderServiceDbContext>(options =>
@@ -24,6 +26,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapWorkOrderEndpoints();
 
 //var summaries = new[]
 //{
