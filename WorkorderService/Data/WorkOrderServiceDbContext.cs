@@ -27,7 +27,7 @@ namespace WorkOrderService.Data
         /// <summary>
         /// Property <c>SiteCodes</c> represents the site codes table.
         /// </summary>
-        public DbSet<Site> SiteCodes { get; set; }
+        public DbSet<Site> Site { get; set; }
 
         /// <summary>
         /// Property <c>ExternalSystem</c> represents the external systems table.
