@@ -46,18 +46,24 @@ namespace WorkOrderService.Models.WorkOrders
         public string? WorkOrderDescription { get; set; }
 
         /// <summary>
-        /// Property <c>CreatedAt</c> represents the date and time the work order has been created.
-        /// <value>A datetime containing the creation date of the work order. Default is DateTime.Now</value>
+        /// Property <c>WorkOrderExternalId</c> represents the external identifier for the work order.
+        /// <value>A string containing the work order external identifier. Default is Empty.</value>
+        /// </summary>
+        public string? WorkOrderExternalId { get; set; }
+
+        /// <summary>
+        /// Property <c>CreatedAt</c> representing the creation date and time of the work order.
+        /// <value>A datetime containing the creation date and time of the work order. Default is DateTime.Now.</value>
         /// </summary>
         [Required]
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Property <c>LastModified</c> represents the date and time the work order has been last modified.
-        /// <value>A datetime containing the last modified date and time of the work order. Default is DateTime.Now</value>
+        /// Property <c>LastModified</c> represents the last modofication date and time of the work order.
+        /// <value>A datetime containing the work order last modification date and time. Default is DateTime.Now.</value>
         /// </summary>
         [Required]
-        public DateTime LastModified {  get; set; }
+        public DateTime LastModified { get; set; }
 
         /// <summary>
         /// Property <c>ExternalId</c> represents the identifier for the work order in an external system.
@@ -73,7 +79,7 @@ namespace WorkOrderService.Models.WorkOrders
         public ExternalSystem? ExternalSystem { get; set; }
 
         /// <summary>
-        /// Property <c>SiteCodesId</c> represents the identifier for the site codes table.
+        /// Property <c>SiteCodesId</c> represents the identifier for the sites table.
         /// <value>A string containing the site code identifier.</value>
         /// </summary>
         [Required]
@@ -81,7 +87,7 @@ namespace WorkOrderService.Models.WorkOrders
         public string? SiteId { get; set; }
 
         /// <summary>
-        /// Property <c>SiteCode</c> represents the reference navigation for the site codes table.
+        /// Property <c>SiteCode</c> represents the reference navigation for the sites table.
         /// <value>A class containing the site codes.</value>
         /// </summary>
         [Required]
@@ -108,6 +114,10 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         public ICollection<WorkOrderHistory>? WorkOrderHistories { get; set; }
 
-        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the collection of work order events.
+        /// <value>An interface representing the contract for the collection of work order events. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrderEvent>? WorkOrderEvents { get; set; }
     }
 }

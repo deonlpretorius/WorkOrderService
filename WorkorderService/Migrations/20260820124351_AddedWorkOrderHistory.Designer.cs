@@ -66,6 +66,9 @@ namespace WorkorderService.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<DateTime>("LastModified")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SiteDescription")
                         .IsRequired()
                         .HasMaxLength(250)
