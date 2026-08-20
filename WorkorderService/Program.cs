@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WorkOrderService.Data;
+using WorkOrderService.Interfaces;
+using WorkOrderService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddOpenApi();
 // Add the DbContext to the service container
 builder.Services.AddDbContext<WorkOrderServiceDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IWorkOrdersService, WorkOrdersService>();
 
 var app = builder.Build();
 
