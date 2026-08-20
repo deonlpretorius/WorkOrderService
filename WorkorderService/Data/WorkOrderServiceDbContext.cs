@@ -191,7 +191,6 @@ namespace WorkOrderService.Data
                         .WithMany(we => we.WorkOrderEvents)
                         .HasForeignKey(we => we.WorkOrderEventId)
                         .OnDelete(DeleteBehavior.NoAction);
-
         }
     }
 }
