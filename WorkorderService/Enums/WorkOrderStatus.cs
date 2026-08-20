@@ -1,10 +1,10 @@
 ﻿/// <summary>
-/// Namespace <c>WorkOrderService.Enums</c> contains the enumerations.
+/// Namespace <c>WorkOrderService.Enums</c> contains the enumerations for the application.
 /// </summary>
 namespace WorkOrderService.Enums
 {
     /// <summary>
-    /// Enum <c>WorkOrderStatusType</c> represents the status of an work order.
+    /// Enum <c>WorkOrderStatus</c> represents the status of a work order.
     /// </summary>
     public enum WorkOrderStatus : int
     {

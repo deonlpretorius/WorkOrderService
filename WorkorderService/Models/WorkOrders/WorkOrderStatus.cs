@@ -2,12 +2,12 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
-/// Namespace <c>WorkOrderService.Models.WorkOrders</c> contains the Work Order data models for the application.
+/// Namespace <c>WorkOrderService.Models</c> contains the Work Order data models that represent the database tables.
 /// </summary>
 namespace WorkOrderService.Models.WorkOrders
 {
     /// <summary>
-    /// Class <c>WorkOrderStatus</c> represents the Work Order Status table.
+    /// Class <c>WorkOrderStatus</c> represents the work orders status table.
     /// </summary>
     [Table("WorkOrderStatuses")]
     public class WorkOrderStatus
@@ -22,33 +22,48 @@ namespace WorkOrderService.Models.WorkOrders
         }
 
         /// <summary>
-        /// Property <c>WorkOrderStatusId</c> represents the identifier for the work order status table.
-        /// <value>A string containing the work order status identifier. Default is NewGuid.</value>
+        /// Property <c>WorkOrderStatusId</c> represents the identifier for the work order status.
+        /// <value>A string containing the work order status identifier.</value>
         /// </summary>
         [Required]
         [Key]
-        public string WorkOrderStatusId { get; set; }
+        public string? WorkOrderStatusId { get; set; }
 
         /// <summary>
-        /// Property <c>WorkOrderStatusName</c> represents the name of the work order status.
+        /// Property <c>StatusName</c> represents the name of the work order status.
         /// <value>A string containing the work order status name. Default is Empty.</value>
         /// </summary>
         [Required]
-        [StringLength(50)]
-        public string? WorkOrderStatusName { get; set; }
+        [StringLength(20)]
+        public string? StatusName { get; set; }
 
         /// <summary>
-        /// Property <c>WorkOrderStatusDescription</c> represents the description of the work order status.
-        /// <value>A string containing the work order description. Default is Empty.</value>
+        /// Property <c>StatusDescription</c> represents the description of the work order status.
+        /// <value>A string containing the work order status description. Default is Empty.</value>
         /// </summary>
         [StringLength(250)]
-        public string? WorkOrderStatusDescription { get; set; }
+        public string? StatusDescription { get; set; }
 
         /// <summary>
-        /// Property <c>Status</c> represents the status of a work order.
+        /// Property <c>Status</c> represents the work order status.
         /// <value>An enum containing the work order status. Default is Pending.</value>
         /// </summary>
         [Required]
-        public Enums.WorkOrderStatus? Status { get; set; }
+        public Enums.WorkOrderStatus Status {  get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrders</c> represents the work orders.
+        /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrder>? WorkOrders { get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrderHistories</c> represents the collection of work order histories.
+        /// <value>An interface representing the contract for the collection of history of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrderHistory>? WorkOrderHistories { get; set; }
+
+        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
+
     }
 }

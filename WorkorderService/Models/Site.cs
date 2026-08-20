@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables for the application.
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WorkOrderService.Models
 {
     /// <summary>
-    /// Class <c>SiteCode</c> represents the sites table.
+    /// Class <c>SiteCode</c> represents the Sites table.
     /// </summary>
     [Table("Sites")]
     public class Site
@@ -22,8 +23,8 @@ namespace WorkOrderService.Models
         }
 
         /// <summary>
-        /// Property <c>SiteId</c> represents the identifier for the Sites table.
-        /// <value>A string containing the site identifier.</value>
+        /// Property <c>SiteId</c> represents the identifier for the sites table.
+        /// <value>A string containing the site code identifier.</value>
         /// </summary>
         [Required]
         [Key]
@@ -46,7 +47,7 @@ namespace WorkOrderService.Models
         public string? SiteDescription { get; set; }
 
         /// <summary>
-        /// Property <c>Code</c> represents the identification code of the site.
+        /// Property <c>SiteCode</c> represents the identification code of a site.
         /// <value>A string containing the site code. Default is Empty.</value>
         /// </summary>
         [Required]
@@ -54,10 +55,18 @@ namespace WorkOrderService.Models
         public string? SiteCode {  get; set; }
 
         /// <summary>
-        /// Property <c>LastModified</c> represents the last modification date and time of the site record.
-        /// <value>A datetime containing the last modification date and time. Default is DateTime.Now</value>
+        /// Property <c>LastModified</c> represents the last modification date and time for the sites table record.
+        /// <value>A datetime containing the last modification date and time. Default is DateTime.Now.</value>
         /// </summary>
         [Required]
-        public DateTime LastModified { get; set; }
+        public DateTime? LastModified { get; set; }
+
+        /// <summary>
+        /// Property <c>WorkOrders</c> represents the collection of work orders.
+        /// <value>An interface representing the contract for the collection of work orders. Default is Null.</value>
+        /// </summary>
+        public ICollection<WorkOrder>? WorkOrders { get; set; }
+
+        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
     }
 }

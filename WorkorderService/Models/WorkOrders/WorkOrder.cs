@@ -69,15 +69,15 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>A string containing the site code identifier.</value>
         /// </summary>
         [Required]
-        [ForeignKey("SiteCodes")]
-        public string? SiteCodeId { get; set; }
+        [ForeignKey("SiteId")]
+        public string? SiteId { get; set; }
 
         /// <summary>
         /// Property <c>SiteCode</c> represents the reference navigation for the sites table.
         /// <value>A class containing the site codes.</value>
         /// </summary>
         [Required]
-        public Site? SiteCode { get; set; }
+        public Site? Site { get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderStatusId</c> represents the identifier for the work orders status table.
@@ -94,19 +94,12 @@ namespace WorkOrderService.Models.WorkOrders
         [Required]
         public WorkOrderStatus? WorkOrderStatus { get; set; }
 
-
         /// <summary>
-        /// Property <c>CreatedAt</c> represents the date and time the work order has been created.
-        /// <value>A datetime containing the creation date of the work order. Default is DateTime.Now</value>
+        /// Property <c>WorkOrderHistories</c> represents the collection of work order histories.
+        /// <value>An interface representing the contract for the collection of history of work orders. Default is Null.</value>
         /// </summary>
-        [Required]
-        public DateTime CreatedAt { get; set; }
+        public ICollection<WorkOrderHistory>? WorkOrderHistories { get; set; }
 
-        /// <summary>
-        /// Property <c>LastModified</c> represents the date and time the work order has been last modified.
-        /// <value>A datetime containing the last modified date and time of the work order. Default is DateTime.Now</value>
-        /// </summary>
-        [Required]
-        public DateTime LastModified { get; set; }
+        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
     }
 }
