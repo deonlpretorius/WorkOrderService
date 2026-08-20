@@ -57,5 +57,7 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         public ICollection<WorkOrder>? WorkOrders { get; set; }
 
+        public ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
+
     }
 }

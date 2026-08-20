@@ -46,7 +46,7 @@ namespace WorkOrderService.Data
         /// <summary>
         /// Property <c>WorkOrderHistories</c> represents the work order histories table.
         /// </summary>
-        // public DbSet<WorkOrderHistory> WorkOrderHistories {  get; set; }
+        public DbSet<WorkOrderHistory> WorkOrderHistories {  get; set; }
 
         /// <summary>
         /// Property <c>WorkOrderEvents</c> represents the work order events table.
@@ -62,10 +62,17 @@ namespace WorkOrderService.Data
             base.OnModelCreating(modelBuilder);
 
             // Work Order Statuses.
+            // Work Order Statuses - Work Orders.
             modelBuilder.Entity<WorkOrderStatus>()
                         .HasMany(w => w.WorkOrders)
                         .WithOne(s => s.WorkOrderStatus)
                         .HasForeignKey(s => s.WorkOrderStatusId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            // Work Order Statuses - Work Order History.
+            modelBuilder.Entity<WorkOrderStatus>()
+                        .HasMany(wh => wh.WorkOrderHistories)
+                        .WithOne(s => s.WorkOrderStatus)
                         .OnDelete(DeleteBehavior.Restrict);
 
             // Sites.
@@ -80,6 +87,42 @@ namespace WorkOrderService.Data
                         .HasMany(w => w.WorkOrders)
                         .WithOne(e => e.ExternalSystem)
                         .HasForeignKey(e => e.ExternalSystemId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            // Work Orders.
+            // Work Orders - External Systems.
+            modelBuilder.Entity<WorkOrder>()
+                        .HasOne(s => s.ExternalSystem)
+                        .WithMany(w => w.WorkOrders)
+                        .HasForeignKey(w => w.ExternalSystemId)
+                        .OnDelete(DeleteBehavior.NoAction);
+
+            // Work Orders - Sites
+            modelBuilder.Entity<WorkOrder>()
+                        .HasOne(s => s.Site)
+                        .WithMany(w => w.WorkOrders)
+                        .HasForeignKey(w => w.SiteId)
+                        .OnDelete(DeleteBehavior.NoAction);
+
+            // Work Orders - Work Order Statuses
+            modelBuilder.Entity<WorkOrder>()
+                        .HasOne(s => s.WorkOrderStatus)
+                        .WithMany(w => w.WorkOrders)
+                        .HasForeignKey(w => w.WorkOrderStatusId)
+                        .OnDelete(DeleteBehavior.NoAction);
+
+            // Work Orders - Work Order Histories
+            modelBuilder.Entity<WorkOrder>()
+                        .HasMany(wh => wh.WorkOrderHistories)
+                        .WithOne(w => w.WorkOrder)
+                        .HasForeignKey(w => w.WorkOrderHistoryId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Work Order Histories
+            modelBuilder.Entity<WorkOrderHistory>()
+                        .HasOne(w => w.WorkOrder)
+                        .WithMany(wh => wh.WorkOrderHistories)
+                        .HasForeignKey(wh => wh.WorkOrderHistoryId)
                         .OnDelete(DeleteBehavior.Restrict);
 
         }

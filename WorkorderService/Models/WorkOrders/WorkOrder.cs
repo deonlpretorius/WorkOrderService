@@ -101,5 +101,7 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         [Required]
         public WorkOrderStatus? WorkOrderStatus { get; set; }
+
+        public ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
     }
 }
