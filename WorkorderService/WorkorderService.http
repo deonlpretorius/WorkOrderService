@@ -3,4 +3,23 @@
 # GET {{WorkorderService_HostAddress}}/weatherforecast/
 # Accept: application/json
 
+### Get All Work Orders
+GET {{WorkorderService_HostAddress}}/api/workorders
+Accept: application/json
+
+### Get Item by ID
+GET {{WorkorderService_HostAddress}}/api/workorders/"1"
+Accept: application/json
+
+### Create a work order.
+POST {{WorkorderService_HostAddress}}/api/workorders
+Accept: application/json
+
+### Update an Work Order
+PUT {{WorkorderService_HostAddress}}/api/workorders
+Accept: application/json
+
+### Delete a Work Order
+DELETE {{WorkorderService_HostAddress}}/api/workorders/"2"
+
 ###

@@ -30,10 +30,10 @@ namespace WorkOrderService.Endpoints
             });
 
             // GET: /api/workorders/{workOrderId}
-            workOrderGroup.MapGet("/{workOrderId:string}", async (string workOrderId, IWorkOrdersService workOrdersService) =>
+            workOrderGroup.MapGet("/{workOrderId:string}", async (string workOrderId, IWorkOrdersService service) =>
             {
-                var workOrders = await workOrdersService.GetByIdAsync(workOrderId);
-                return workOrders is not null ? TypedResults.Ok(workOrders) : TypedResults.NotFound();
+                var workOrder = await service.GetByIdAsync(workOrderId);
+                return workOrder is not null ? Results.Ok(workOrder) : Results.NotFound();
             });
 
             // POST: /api/workorders
@@ -44,18 +44,17 @@ namespace WorkOrderService.Endpoints
             });
 
             // PUT: /api/workorders/{workOrderId}
-
             workOrderGroup.MapPut("/{workOrderId:string}", async (string workOrderId, WorkOrder workOrder, IWorkOrdersService workOrdersService) =>
             {
                 var updatedWorkOrder = await workOrdersService.UpdateAsync(workOrderId, workOrder);
-                return updatedWorkOrder ? TypedResults.NoContent() : TypedResults.NotFound();
+                return updatedWorkOrder ? Results.NoContent() : Results.NotFound();
             });
 
             // DELETE: /api/workorders
             workOrderGroup.MapDelete("/{workOrderId:string}", async (string workOrderId, IWorkOrdersService workOrdersService) =>
             {
                 var removedWorkOrder = await workOrdersService.DeleteAsync(workOrderId);
-                return removedWorkOrder ? TypedResults.NoContent() : TypedResults.NotFound();
+                return removedWorkOrder ? Results.NoContent() : Results.NotFound();
             });
         }
     }
