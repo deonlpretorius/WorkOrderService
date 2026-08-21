@@ -10,7 +10,7 @@ namespace WorkOrderService.Services
     /// <summary>
     /// Class <c>SitesService</c> represents the Sites Service.
     /// <remarks>
-    /// Implements the ISitesService <see cref="IWorkOrderStatusesService"/>
+    /// Implements the ISitesService <see cref="ISitesService"/>
     /// </remarks>
     /// </summary>
     public class WorkOrderStatusesService : IWorkOrderStatusesService

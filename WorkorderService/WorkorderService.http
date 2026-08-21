@@ -3,11 +3,12 @@
 # GET {{WorkorderService_HostAddress}}/weatherforecast/
 # Accept: application/json
 
+### Work Orders
 ### Get All Work Orders
 GET {{WorkorderService_HostAddress}}/api/workorders
 Accept: application/json
 
-### Get Item by ID
+### Get Work Order by ID
 GET {{WorkorderService_HostAddress}}/api/workorders/"1"
 Accept: application/json
 
@@ -21,5 +22,20 @@ Accept: application/json
 
 ### Delete a Work Order
 DELETE {{WorkorderService_HostAddress}}/api/workorders/"2"
+
+### Sites
+### Get All Sites
+GET {{WorkorderService_HostAddress}}/api/sites
+Accept: application/json
+
+### Get Site By ID
+GET {{WorkorderService_HostAddress}}/api/sites/"1"
+Accept: aaplication/json
+
+### Create a Site
+GET {{WorkorderService_HostAddress}}/api/sites
+Accept: application/json
+
+### 
 
 ###

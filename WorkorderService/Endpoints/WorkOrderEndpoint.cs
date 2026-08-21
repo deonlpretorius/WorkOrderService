@@ -9,7 +9,7 @@ namespace WorkOrderService.Endpoints
     /// <summary>
     /// Class <c>WorkOrderEndpoints</c> represents the Work Orders Endpoint.
     /// </summary>
-    public static class WorkOrderEndpoints
+    public static class WorkOrderEndpoint
     {
         /// <summary>
         /// Method <c>MapWorkOrderEndpoints</c> maps the Work Order HTTP Endpoints by making use of route grouping.

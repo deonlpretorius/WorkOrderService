@@ -16,6 +16,9 @@ builder.Services.AddDbContext<WorkOrderServiceDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IWorkOrdersService, WorkOrdersService>();
+builder.Services.AddScoped<IWorkOrderStatusesService, WorkOrderStatusesService>();
+builder.Services.AddScoped<IExternalSystemsService, ExternalSystemsService>();
+builder.Services.AddScoped<ISitesService, SitesService>();
 
 var app = builder.Build();
 

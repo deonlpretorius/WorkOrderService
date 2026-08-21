@@ -1,4 +1,5 @@
-﻿using WorkOrderService.Services;
+﻿using WorkOrderService.Interfaces;
+using WorkOrderService.Models;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -18,11 +19,44 @@ namespace WorkOrderService.Endpoints
         public static void MapSiteEndpoints(this IEndpointRouteBuilder routes)
         {
             // Makes use of Route Groups for a cleaner API.
-            var siteGroup = routes.MapGroup("/api/sites")
+            var siteGroup = routes.MapGroup("/api/site")
                                   .WithTags("Sites");
 
-            // GET: /api/sites
-            siteGroup.MapGet("/", async (ISitesService))
+            // GET: /api/site
+            siteGroup.MapGet("/", async (ISitesService service) =>
+            {
+                var sites = await service.GetAllAsync();
+                return Results.Ok(sites);
+            }); 
+
+            // GET: /api/site/{siteId}
+            siteGroup.MapGet("/{siteId:string}", async (string siteId, ISitesService service) =>
+            {
+                var site = await service.GetByIdAsync(siteId);
+                return site is not null ? Results.Ok(site) : Results.NotFound();
+            });
+
+            // POST: /api/site
+            siteGroup.MapPost("/", async (Site site, ISitesService service) =>
+            {
+                var createdSite = await service.CreateAsync(site);
+                return TypedResults.Created($"/api/workorders/{createdSite.SiteId}");
+            });
+
+            // PUT: /api/site/{siteId}
+            siteGroup.MapPut("/{siteId:string}", async (string siteId, Site site, ISitesService service) =>
+            {
+                var updatedSite = await service.UpdateAsync(siteId, site);
+                return updatedSite ? Results.NoContent() : Results.NotFound();
+            });
+
+            // DELETE: /api/site
+            siteGroup.MapDelete("/{siteId:string}", async (string siteId, ISitesService service) =>
+            {
+                var removedSite = await service.DeleteAsync(siteId);
+                return removedSite ? Results.NoContent() : Results.NotFound();
+            });
+
         }
     }
 }

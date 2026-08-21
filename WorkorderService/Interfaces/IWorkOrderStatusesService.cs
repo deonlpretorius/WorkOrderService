@@ -1,5 +1,4 @@
-﻿using WorkOrderService.Models;
-using WorkOrderService.Models.WorkOrders;
+﻿using WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Interfaces</c> contains the contract for the implementation of business logic for the application.
