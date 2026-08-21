@@ -18,7 +18,7 @@ namespace WorkOrderService.Models.WorkOrders
         public WorkOrderStatus()
         {
             WorkOrderStatusId = Guid.NewGuid().ToString();
-            Status = Enums.WorkOrderStatus.Pending;
+            Status = Enums.WorkOrderStatusType.Pending;
         }
 
         /// <summary>
@@ -35,21 +35,21 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         [Required]
         [StringLength(20)]
-        public string? StatusName { get; set; }
+        public string? WorkOrderStatusName { get; set; }
 
         /// <summary>
         /// Property <c>StatusDescription</c> represents the description of the work order status.
         /// <value>A string containing the work order status description. Default is Empty.</value>
         /// </summary>
         [StringLength(250)]
-        public string? StatusDescription { get; set; }
+        public string? WorkOrderStatusDescription { get; set; }
 
         /// <summary>
         /// Property <c>Status</c> represents the work order status.
         /// <value>An enum containing the work order status. Default is Pending.</value>
         /// </summary>
         [Required]
-        public Enums.WorkOrderStatus Status {  get; set; }
+        public Enums.WorkOrderStatusType Status {  get; set; }
 
         /// <summary>
         /// Property <c>WorkOrders</c> represents the work orders.

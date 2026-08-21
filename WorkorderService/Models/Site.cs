@@ -67,6 +67,10 @@ namespace WorkOrderService.Models
         /// </summary>
         public ICollection<WorkOrder>? WorkOrders { get; set; }
 
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the collection of work order events.
+        /// <value>An interface representing the contract for the collection of work order events. Default is Null.</value>
+        /// </summary>
         public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
     }
 }

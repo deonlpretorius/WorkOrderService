@@ -8,12 +8,23 @@ using WorkOrderService.Models.WorkOrders;
 namespace WorkOrderService.Services
 {
     /// <summary>
-    /// Class <c>WorkOrderService</c> represents the 
+    /// Class <c>WorkOrderService</c> represents the Work Orders Service.
+    /// <remarks>
+    /// Implements the IWorkOrdersService <see cref="IWorkOrdersService"/>
+    /// </remarks>
     /// </summary>
     public class WorkOrdersService : IWorkOrdersService
     {
+        /// <summary>
+        /// Property <c>WorkOrderServiceDbContext</c> represents the database context.
+        /// <value>A class containing the data access layer.</value>
+        /// </summary>
         private readonly WorkOrderServiceDbContext _dbContext;
 
+        /// <summary>
+        /// Constructor <c>WorkOrderService</c> is used to instantiate the Work Orders Service.
+        /// </summary>
+        /// <param name="dbContext">The class representing the database context.</param>
         public WorkOrdersService(WorkOrderServiceDbContext dbContext)
         {
             _dbContext = dbContext;
