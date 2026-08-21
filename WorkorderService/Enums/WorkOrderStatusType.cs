@@ -6,7 +6,7 @@ namespace WorkOrderService.Enums
     /// <summary>
     /// Enum <c>WorkOrderStatus</c> represents the status of a work order.
     /// </summary>
-    public enum WorkOrderStatus : int
+    public enum WorkOrderStatusType : int
     {
         Pending = 1,
         Accepted = 2,
