@@ -38,6 +38,20 @@ namespace WorkOrderService.Interfaces
         Task<Site?> GetByIdAsync(string siteId);
 
         /// <summary>
+        /// Method <c>GetBySiteCode</c> retrieves a site by the site code.
+        /// </summary>
+        /// <param name="siteCode">The string containing the site code.</param>
+        /// <returns>A class containing the site data model.</returns>
+        Site? GetBySiteCode(string siteCode);
+
+        /// <summary>
+        /// Method <c>GetBySiteCode</c> retrieves a site by the site code.
+        /// </summary>
+        /// <param name="siteCode">The string containing the site code.</param>
+        /// <returns>A class containing the site data model.</returns>
+        Task<Site?> GetBySiteCodeAsync(string siteCode);
+
+        /// <summary>
         /// Method <c>Create</c> creates a new site entry.
         /// </summary>
         /// <param name="site">The class containing the site data model.</param>

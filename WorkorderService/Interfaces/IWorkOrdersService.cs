@@ -1,4 +1,5 @@
 ﻿using WorkOrderService.Models.WorkOrders;
+using WorkOrderService.Enums;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Interfaces</c> contains the contract for the implementation of business logic for the application.
@@ -13,12 +14,14 @@ namespace WorkOrderService.Interfaces
         /// <summary>
         /// Property <c>GetAll</c> retrieves all work orders.
         /// </summary>
+        /// <param name="status">The enumeration representing a work order status type.</param>
         /// <returns>An interface representing the contract for the collection of work orders.</returns>
         IEnumerable<WorkOrder> GetAll();
 
         /// <summary>
         /// Property <c>GetAllAsync</c> retrieves all work orders.
         /// </summary>
+        /// <param name="status">The enumeration representing a work order status type.</param>
         /// <returns>A class containing the interface representing the contract for the collection of work orders.</returns>
         Task<IEnumerable<WorkOrder>> GetAllAsync();
 
@@ -35,6 +38,20 @@ namespace WorkOrderService.Interfaces
         /// <param name="workOrderId">The string containing the globally unique identifier (GUID) for the work order table.</param>
         /// <returns>A class containing the work order data model.</returns>
         Task<WorkOrder?> GetByIdAsync(string workOrderId);
+
+        /// <summary>
+        /// Property <c>GetByStatus</c> retrieves all work orders by work order status.
+        /// </summary>
+        /// <param name="status">The enumeration representing the work order status type.</param>
+        /// <returns>An interface representing the contract for the collection of work orders.</returns>
+        IEnumerable<WorkOrder> GetByStatus(WorkOrderStatusType status, int pageNumber, int pageSize);
+
+        /// <summary>
+        /// Property <c>GetByStatusAsync</c> retrieves all work orders by work order status.
+        /// </summary>
+        /// <param name="status">The enumeration representing the work order status type.</param>
+        /// <returns></returns>
+        Task<IEnumerable<WorkOrder>> GetByStatusAsync(WorkOrderStatusType status, int pageNumber, int pageSize);
 
         /// <summary>
         /// Property <c>Create</c> creates a work order.
@@ -63,6 +80,22 @@ namespace WorkOrderService.Interfaces
         /// <param name="workOrder">The class representing the work order table.</param>
         /// <returns>A class containing the work order data model.</returns>
         Task<bool> UpdateAsync(string workOrderId, WorkOrder updatedWorkOrder);
+
+        /// <summary>
+        /// Property <c>UpdateWorkOrderStatus</c> updates a work order status in the work order table.
+        /// </summary>
+        /// <param name="workOrderId">The string containing the globally unique identifier (GUID) for the work order table.</param>
+        /// <param name="status">The enum containing the work order status types.</param>
+        /// <returns>A boolean containing the update status result.</returns>
+        bool UpdateWorkOrderStatus(string workOrderId, WorkOrderStatusType status);
+
+        /// <summary>
+        /// Property <c>UpdateWorkOrderStatusAsync</c> updates a work order status in the work order table.
+        /// </summary>
+        /// <param name="workOrderId">The string containing the globally unique identifier (GUID) for the work order table.</param>
+        /// <param name="status">The enum containing the work order status types.</param>
+        /// <returns>A boolean containing the update status result.</returns>
+        Task<bool> UpdateWorkOrderStatusAsync(string workOrderId, WorkOrderStatusType status);
 
         /// <summary>
         /// Property <c>Delete</c> removes an work order.

@@ -1,4 +1,5 @@
-﻿using WorkOrderService.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using WorkOrderService.Data;
 using WorkOrderService.Interfaces;
 using WorkOrderService.Models;
 
@@ -114,6 +115,26 @@ namespace WorkOrderService.Services
         {
             var site = await _dbContext.Sites.FindAsync(siteId);
 
+            if (site is null)
+                return null;
+
+            return site;
+        }
+
+        // <inheritdoc />
+        public Site? GetBySiteCode(string siteCode)
+        {
+            var site = _dbContext.Sites.Where(x => x.SiteCode == siteCode).FirstOrDefault();
+            if (site is null)
+                return null;
+
+            return site;
+        }
+
+        // <iheritdoc />
+        public async Task<Site?> GetBySiteCodeAsync(string siteCode)
+        {
+            var site = await _dbContext.Sites.Where(x => x.SiteCode == siteCode).FirstOrDefaultAsync();
             if (site is null)
                 return null;
 

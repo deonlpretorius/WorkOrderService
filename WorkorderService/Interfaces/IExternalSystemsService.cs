@@ -38,6 +38,20 @@ namespace WorkOrderService.Interfaces
         Task<ExternalSystem?> GetByIdAsync(string externalSystemId);
 
         /// <summary>
+        /// Property <c>GetByCode</c> retrieves an external system record by the external system code.
+        /// </summary>
+        /// <param name="externalSystemCode">The string containing the external system code.</param>
+        /// <returns>A class containing the external system data model.</returns>
+        ExternalSystem? GetByCode(string externalSystemCode);
+
+        /// <summary>
+        /// Property <c>GetByCode</c> retrieves an external system record by the external system code.
+        /// </summary>
+        /// <param name="externalSystemCode">The string containing the external system code.</param>
+        /// <returns>A class containing the external system data model.</returns>
+        Task<ExternalSystem?> GetByCodeAsync(string externalSystemCode);
+
+        /// <summary>
         /// Method <c>Create</c> creates a new External System entry.
         /// </summary>
         /// <param name="ExternalSystem">The class containing the External System data model.</param>

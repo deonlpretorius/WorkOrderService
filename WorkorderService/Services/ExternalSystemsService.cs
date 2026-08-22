@@ -1,4 +1,5 @@
-﻿using WorkOrderService.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using WorkOrderService.Data;
 using WorkOrderService.Interfaces;
 using WorkOrderService.Models;
 
@@ -10,7 +11,7 @@ namespace WorkOrderService.Services
     /// <summary>
     /// Class <c>SitesService</c> represents the Sites Service.
     /// <remarks>
-    /// Implements the ISitesService <see cref="ISitesService"/>
+    /// Implements the ISitesService <see cref="IExternalSystemsService"/>
     /// </remarks>
     /// </summary>
     public class ExternalSystemsService : IExternalSystemsService
@@ -98,6 +99,24 @@ namespace WorkOrderService.Services
 
         // <inheritdoc />
         public Task<IEnumerable<ExternalSystem>> GetAllAsync() => Task.FromResult(_dbContext.ExternalSystems.AsEnumerable());
+
+        public ExternalSystem? GetByCode(string externalSystemCode)
+        {
+            var externalSystem = _dbContext.ExternalSystems.Where(x => x.ExternalSystemCode == externalSystemCode).FirstOrDefault();
+            if (externalSystem is null)
+                return null;
+
+            return externalSystem;
+        }
+
+        public async Task<ExternalSystem?> GetByCodeAsync(string externalSystemCode)
+        {
+            var externalSystem = await _dbContext.ExternalSystems.Where(x => x.ExternalSystemCode == externalSystemCode).FirstOrDefaultAsync();
+            if (externalSystem is null)
+                return null;
+
+            return externalSystem;
+        }
 
         // <inheritdoc />
         public ExternalSystem? GetById(string externalSystemId)
