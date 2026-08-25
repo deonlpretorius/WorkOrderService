@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models.WorkOrders
+namespace DigitalTwin.WebAPI.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrder</c> represents the work orders table.
@@ -46,7 +46,8 @@ namespace WorkOrderService.Models.WorkOrders
         public string? WorkOrderDescription { get; set; }
 
         /// <summary>
-        /// Property <c>WorkOrderExternalId</c> represents the external identifier for the work order.
+        /// Property <c>WorkOrderExternalId</c> represents an external identifier for the work order.
+        /// This identifier is used to identify a work order from an external system.
         /// <value>A string containing the work order external identifier. Default is Empty.</value>
         /// </summary>
         public string? WorkOrderExternalId { get; set; }

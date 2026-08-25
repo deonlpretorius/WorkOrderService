@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WorkorderService.Migrations
+namespace DigitalTwin.WebAPI.Migrations
 {
     /// <inheritdoc />
     public partial class AddedWorkOrderHistory : Migration

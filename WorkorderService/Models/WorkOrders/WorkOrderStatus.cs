@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DigitalTwin.WebAPI.Enums.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the Work Order data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models.WorkOrders
+namespace DigitalTwin.WebAPI.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrderStatus</c> represents the work orders status table.
@@ -18,7 +19,7 @@ namespace WorkOrderService.Models.WorkOrders
         public WorkOrderStatus()
         {
             WorkOrderStatusId = Guid.NewGuid().ToString();
-            Status = Enums.WorkOrderStatusType.Pending;
+            Status = WorkOrderStatusType.Pending;
         }
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace WorkOrderService.Models.WorkOrders
         /// <value>An enum containing the work order status. Default is Pending.</value>
         /// </summary>
         [Required]
-        public Enums.WorkOrderStatusType Status {  get; set; }
+        public WorkOrderStatusType Status {  get; set; }
 
         /// <summary>
         /// Property <c>WorkOrders</c> represents the work orders.
@@ -63,7 +64,11 @@ namespace WorkOrderService.Models.WorkOrders
         /// </summary>
         public ICollection<WorkOrderHistory>? WorkOrderHistories { get; set; }
 
-        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the collection of work order events.
+        /// <value>An interface representing the contract for the collection of work order event data models.</value>
+        /// </summary>
+        public ICollection<WorkOrderEvent>? WorkOrderEvents { get; set; }
 
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models.WorkOrders
+namespace DigitalTwin.WebAPI.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrderEvent</c> represents the work order events table.
@@ -64,7 +64,7 @@ namespace WorkOrderService.Models.WorkOrders
         public ExternalSystem? ExternalSystem { get; set; }
 
         /// <summary>
-        /// Property <c>Status</c> represents the status of the work order (latest status update).
+        /// Property <c>WorkOrderStatusId</c> represents the status of the work order (latest status update).
         /// This is used for system integration purposes.
         /// <value>An enum containing the work order status.</value>
         /// </summary>
@@ -80,7 +80,7 @@ namespace WorkOrderService.Models.WorkOrders
         public WorkOrderStatus? WorkOrderStatus { get; set; }
 
         /// <summary>
-        /// Property <c>SiteCodeId</c> represents the identifier for the site codes table.
+        /// Property <c>SiteId</c> represents the identifier for the site codes table.
         /// <value>A string containing the site codes identifier.</value>
         /// </summary>
         [Required]
@@ -88,7 +88,7 @@ namespace WorkOrderService.Models.WorkOrders
         public string? SiteId { get; set; }
 
         /// <summary>
-        /// Property <c>SiteCode</c> represents the reference navigation for the site codes table.
+        /// Property <c>Site</c> represents the reference navigation for the site codes table.
         /// <value>A class containing the site code data model.</value>
         /// </summary>
         [Required]
