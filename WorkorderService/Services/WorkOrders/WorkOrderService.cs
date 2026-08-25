@@ -238,12 +238,26 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
 
         public WorkOrder? GetByExternalId(string workOrderExternalId)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(workOrderExternalId))
+                throw new Exception("The work order external identifier is empty.");
+
+            var workOrder = _dbContext.WorkOrders.Where(x => x.ExternalSystemId == workOrderExternalId).FirstOrDefault();
+            if (workOrder is null)
+                throw new Exception("The work order could not be found.");
+
+            return workOrder;
         }
 
-        public Task<WorkOrder?> GetByExternalIdAsync(string workOrderExternalId)
+        public async Task<WorkOrder?> GetByExternalIdAsync(string workOrderExternalId)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(workOrderExternalId))
+                throw new Exception("The work order external identifier is empty.");
+
+            var workOrder = await _dbContext.WorkOrders.Where(x => x.ExternalSystemId == workOrderExternalId).FirstOrDefaultAsync();
+            if (workOrder is null)
+                throw new Exception("The work order could not be found.");
+
+            return workOrder;
         }
 
         // <inheritdoc />
@@ -307,10 +321,10 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
                 workOrder.WorkOrderHistories = workOrderHistories;
             }
 
-            if (workOrders.Any())
-                return workOrders;
+            if (!workOrders.Any())
+                return null;
 
-            return null;
+            return workOrders;
         }
 
         public async Task<IEnumerable<WorkOrder>> GetByStatusAsync(WorkOrderStatusType status, int pageNumber, int pageSize)
@@ -338,9 +352,9 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
             }
 
             if (!workOrders.Any())
-                return workOrders;
+                return null;
 
-            return null;
+            return workOrders;
         }
 
         // <inheritdoc />

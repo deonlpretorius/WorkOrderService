@@ -25,6 +25,7 @@ namespace DigitalTwin.WebAPI.Interfaces
         /// <summary>
         /// Method <c>GetById</c> retrieves a site by table identifier.
         /// </summary>
+        /// 
         /// <param name="siteId">The string containing the globally unique identifier (GUID) for the sites table.</param>
         /// <returns>A class containing the site data model.</returns>
         Site? GetById(string siteId);

@@ -1,4 +1,7 @@
+using DigitalTwin.Endpoints;
 using DigitalTwin.WebAPI.Data;
+using DigitalTwin.WebAPI.Endpoints;
+using DigitalTwin.WebAPI.Endpoints.WorkOrders;
 using DigitalTwin.WebAPI.Interfaces;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
 using DigitalTwin.WebAPI.Services;
@@ -10,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
 
 // Add the DbContext to the service container
 builder.Services.AddDbContext<WorkOrderServiceDbContext>(options =>
@@ -34,6 +38,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Add the endpoints.
+app.MapSiteEndpoints();
+app.MapExternalSystemEndpoint();
+app.MapWorkOrderStatusEndpoints();
+app.MapWorkOrderEndpoints();
+app.MapWorkOrderHistoryEndpoint();
+app.MapWorkOrderEventEndpoints();
 
 //var summaries = new[]
 //{

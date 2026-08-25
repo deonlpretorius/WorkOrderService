@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkOrderService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27b192c8fe77c84745dc97583d5e504b878ca1dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09ca102d1b2acf0cbb585a3ed734e7de51279bfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkOrderService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkOrderService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
