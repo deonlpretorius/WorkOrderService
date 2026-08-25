@@ -1,41 +1,139 @@
-@WorkorderService_HostAddress = http://localhost:5297
+@DigitalTwin_WebAPI_HostAddress = http://localhost:5297
 
 # GET {{WorkorderService_HostAddress}}/weatherforecast/
 # Accept: application/json
 
+### Sites
+### Get All Sites
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/sites/GetAllSites
+Accept: application/json
+
+### Get Sites By Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/sites/GetSiteById
+Accept: application/json
+
+### Get Site By Site Code
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/sites/GetSiteBySiteCode
+Accept: application/json
+
+### Create Site
+POST {{DigitalTwin_WebAPI_HostAddress}}/api/sites/CreateSite
+Accept: application/json
+
+### Update Site
+PUT {{DigitalTwin_WebAPI_HostAddress}}/api/sites/UpdateSite
+Accept: application/json
+
+### Delete Site
+DELETE {{DigitalTwin_WebAPI_HostAddress}}/api/sites/DeleteSite
+Accept: application/json
+
+### External Systems
+### Get All External Systems
+GET {[DigitalTwin_WebAPI_HostAddress]}/api/externalsystems/GetAllExternalSystems
+Accept: application/json
+
+### Get External System by Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/externalsystems/GetExternalSystemById
+Accept: application/json
+
+### Get External System By External System Code
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/externalsystems/GetExternalSystemByCode
+Accept: application/json
+
+### Create External System 
+POST {{DigitalTwin_WebAPI_HostAddress}}/api/externalsystems/CreateExternalSystem
+Accept: application/json
+
+### Update External System
+PUT {{DigitalTwin_WebAPI_HostAddress}}/api/externalsystems/UpdateExternalSystem
+Accept: application/json
+
+### Delete External System
+DELETE {{DigitalTwin_WebAPI_HostAddress}}/api/externalsystems/DeleteExternalSystem
+Accept: application/json
+
+### Work Order Status.
+### Get All Work Order Statuses
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderstatuses/GetAllWorkOrderStatuses
+Accept: application/json
+
+### Get Work Order Status By Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderstatuses/GetWorkOrderStatusById
+Accept: application/json
+
+### Create Work Order Status
+POST {{DigitalTwin_WebAPI_HostAddress}}/api/workorderstatuses/CreateWorkOrderStatus
+Accept: application/json
+
+### Update Work Order Status
+PUT {{DigitalTwin_WebAPI_HostAddress}}/api/workorderstatuses/UpdateWorkOrderStatus
+Accept: application/json
+
+### Delete Work Order Status
+DELETE {{DigitalTwin_WebAPI_HostAddress}}/api/workorderstatuses/DeleteWorkOrderStatus
+Accept: application/json
+
 ### Work Orders
 ### Get All Work Orders
-GET {{WorkorderService_HostAddress}}/api/workorders
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/GetAllWorkOrders
 Accept: application/json
 
 ### Get Work Order by ID
-GET {{WorkorderService_HostAddress}}/api/workorders/"1"
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/GetWorkOrderById/"1"
+Accept: application/json
+
+### Get Work Order By Work Order Status
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/GetWorkOrderByStatus
 Accept: application/json
 
 ### Create a work order.
-POST {{WorkorderService_HostAddress}}/api/workorders
+POST {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/CreateWorkOrder
 Accept: application/json
 
 ### Update an Work Order
-PUT {{WorkorderService_HostAddress}}/api/workorders
+PUT {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/UpdateWorkOrder
 Accept: application/json
 
 ### Delete a Work Order
-DELETE {{WorkorderService_HostAddress}}/api/workorders/"2"
-
-### Sites
-### Get All Sites
-GET {{WorkorderService_HostAddress}}/api/sites
+DELETE {{DigitalTwin_WebAPI_HostAddress}}/api/workorders/DeleteWorkOrder/"2"
 Accept: application/json
 
-### Get Site By ID
-GET {{WorkorderService_HostAddress}}/api/sites/"1"
-Accept: aaplication/json
-
-### Create a Site
-GET {{WorkorderService_HostAddress}}/api/sites
+### Work Order History
+### Get All Work Order Histories
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/GetAllWorkOrderHistories
 Accept: application/json
 
-### 
+### Get Work Order History By Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/GetWorkOrderHistoryById
+Accept: application/json
+
+### Get Work Order History By Status
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/GetWorkOrderHistoryByStatus
+Accept: application/json
+
+### Get Work Order History By Work Order Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/GetWorkOrderHistoryByWorkOrderId
+Accept: application/json
+
+### Get Work Order History By Work Order Id and Status
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/GetWorkOrderHistoryByWorkOrderIdAndStatus
+Accept: application/json
+
+### Create Work Order History
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderhistories/CreateWorkOrderHistory
+Accept: application/json
+
+### Get All Work Order Events
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderevents/GetAllWorkOrderEvents
+Accept: application/json}}
+
+### Get Work Order Event By Id
+GET {{DigitalTwin_WebAPI_HostAddress}}/api/workorderevents/GetWorkOrderEvent
+Accept: application/json}}
+
+### Create Work Order Event
+POST {{DigitalTwin_WebAPI_HostAddress}}/api/workorderevents/CreatetWorkOrderEvent
+Accept: application/json}}
 
 ###

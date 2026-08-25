@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DigitalTwin.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce180c7e9323030eb4b64cade2728459c2731686")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+009109154fd894f7633f80d2467e501f0f7baf74")]
 [assembly: System.Reflection.AssemblyProductAttribute("DigitalTwin.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigitalTwin.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

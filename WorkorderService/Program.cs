@@ -1,4 +1,7 @@
+using DigitalTwin.Endpoints;
 using DigitalTwin.WebAPI.Data;
+using DigitalTwin.WebAPI.Endpoints;
+using DigitalTwin.WebAPI.Endpoints.WorkOrders;
 using DigitalTwin.WebAPI.Interfaces;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
 using DigitalTwin.WebAPI.Services;
@@ -36,7 +39,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Add the endpoints.
+app.MapSiteEndpoints();
+app.MapExternalSystemEndpoint();
+app.MapWorkOrderStatusEndpoints();
 app.MapWorkOrderEndpoints();
+app.MapWorkOrderHistoryEndpoint();
+app.MapWorkOrderEventEndpoints();
 
 //var summaries = new[]
 //{
