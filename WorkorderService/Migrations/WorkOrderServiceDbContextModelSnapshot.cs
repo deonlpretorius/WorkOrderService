@@ -4,18 +4,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WorkOrderService.Data;
+using DigitalTwin.WebAPI.Data;
 
 #nullable disable
 
-namespace WorkorderService.Migrations
+namespace DigitalTwin.WebAPI.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
     partial class WorkOrderServiceDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "10.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
@@ -309,7 +308,6 @@ namespace WorkorderService.Migrations
 
                     b.Navigation("WorkOrders");
                 });
-#pragma warning restore 612, 618
         }
     }
 }

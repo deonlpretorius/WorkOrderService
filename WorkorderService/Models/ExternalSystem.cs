@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WebAPI.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace WorkOrderService.Models
+namespace DigitalTwin.WebAPI.Models
 {
     /// <summary>
     /// Class <c>ExternalSystem</c> represetns the external systems table.
@@ -67,6 +67,10 @@ namespace WorkOrderService.Models
         /// </summary>
         public ICollection<WorkOrder>? WorkOrders { get; set; }
 
-        public ICollection<WorkOrderEvent> WorkOrderEvents { get; set; }
+        /// <summary>
+        /// Property <c>WorkOrderEvents</c> represents the collection of work order events.
+        /// <value>An interface representing the contract for the collection of work order event data models.</value>
+        /// </summary>
+        public ICollection<WorkOrderEvent>? WorkOrderEvents { get; set; }
     }
 }
