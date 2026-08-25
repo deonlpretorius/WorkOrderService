@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\services\\workorders\\workorderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|solutionrelative:workorderservice\\services\\workorders\\workorderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\interfaces\\workorders\\iworkorderhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|solutionrelative:workorderservice\\interfaces\\workorders\\iworkorderhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\services\\workorders\\workorderhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|solutionrelative:workorderservice\\services\\workorders\\workorderhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\services\\workorders\\workorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WebAPI.csproj|solutionrelative:workorderservice\\services\\workorders\\workorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +26,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkOrderStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderStatusService.cs",
+              "RelativeDocumentMoniker": "WorkorderService\\Services\\WorkOrders\\WorkOrderStatusService.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderStatusService.cs",
+              "RelativeToolTip": "WorkorderService\\Services\\WorkOrders\\WorkOrderStatusService.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAADwv58AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T14:35:23.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IWorkOrderHistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Interfaces\\WorkOrders\\IWorkOrderHistoryService.cs",
+              "RelativeDocumentMoniker": "WorkorderService\\Interfaces\\WorkOrders\\IWorkOrderHistoryService.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Interfaces\\WorkOrders\\IWorkOrderHistoryService.cs",
+              "RelativeToolTip": "WorkorderService\\Interfaces\\WorkOrders\\IWorkOrderHistoryService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAmwEQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T14:31:59.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WorkOrderHistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderHistoryService.cs",
+              "RelativeDocumentMoniker": "WorkorderService\\Services\\WorkOrders\\WorkOrderHistoryService.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderHistoryService.cs",
+              "RelativeToolTip": "WorkorderService\\Services\\WorkOrders\\WorkOrderHistoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T14:06:04.214Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "6ba9f867-e50f-46ba-a8cf-ae46036bb776",
+        "Display": 0,
+        "X": 304,
+        "Y": 187,
+        "Width": 943,
+        "Height": 983,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderService.cs",
+              "RelativeDocumentMoniker": "WorkorderService\\Services\\WorkOrders\\WorkOrderService.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Services\\WorkOrders\\WorkOrderService.cs",
+              "RelativeToolTip": "WorkorderService\\Services\\WorkOrders\\WorkOrderService.cs",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAAAOEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T13:48:44.288Z",
+              "EditorCaption": ""
+            }
+          ]
         }
       ]
     }

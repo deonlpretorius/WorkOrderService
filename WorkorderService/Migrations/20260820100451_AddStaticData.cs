@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WorkorderService.Migrations
+namespace DigitalTwin.WebAPI.Migrations
 {
     /// <inheritdoc />
     public partial class AddStaticData : Migration
