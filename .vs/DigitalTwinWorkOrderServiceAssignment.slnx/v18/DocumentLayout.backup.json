@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFAA05DA-0603-874E-FF54-058F2509979D}|DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\digitaltwin.webapi.automatedtests\\sitestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFAA05DA-0603-874E-FF54-058F2509979D}|DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj|solutionrelative:digitaltwin.webapi.automatedtests\\sitestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SitesTests.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\SitesTests.cs",
+              "RelativeDocumentMoniker": "DigitalTwin.WebAPI.AutomatedTests\\SitesTests.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\SitesTests.cs",
+              "RelativeToolTip": "DigitalTwin.WebAPI.AutomatedTests\\SitesTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T21:03:56.533Z",
+              "EditorCaption": ""
+            }
+          ]
         }
       ]
     }

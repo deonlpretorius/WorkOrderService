@@ -3,7 +3,6 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="WorkOrderService/DigitalTwin.WebAPI.csproj">
-    <Platform Solution="*|x64" Project="x64" />
-  </Project>
+  <Project Path="DigitalTwin.WebAPI.AutomatedTests/DigitalTwin.WebAPI.AutomatedTests.csproj" />
+  <Project Path="DigitalTwin.WebAPI/DigitalTwin.WebAPI.csproj" />
 </Solution>
