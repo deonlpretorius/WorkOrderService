@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WorkOrderService.Data;
+using DigitalTwin.WebAPI.Data;
 
 #nullable disable
 
-namespace WorkorderService.Migrations
+namespace DigitalTwin.WebAPI.Migrations
 {
     [DbContext(typeof(WorkOrderServiceDbContext))]
     [Migration("20260820124351_AddedWorkOrderHistory")]

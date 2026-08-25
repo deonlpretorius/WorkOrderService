@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WorkorderService.Migrations
+namespace DigitalTwin.WebAPI.Migrations
 {
     /// <inheritdoc />
     public partial class RenamedSiteCodes : Migration
