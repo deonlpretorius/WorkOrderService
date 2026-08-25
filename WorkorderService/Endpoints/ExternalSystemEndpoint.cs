@@ -1,6 +1,5 @@
-﻿using WorkOrderService.Interfaces;
-
-using WorkOrderService.Models;
+﻿using DigitalTwin.WebAPI.Interfaces;
+using DigitalTwin.WebAPI.Models;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -24,35 +23,35 @@ namespace WorkOrderService.Endpoints
                                   .WithTags("ExternalSystems");
 
             // GET: /api/externalsystem
-            externalSystemGroup.MapGet("/", async (IExternalSystemsService service) =>
+            externalSystemGroup.MapGet("/", async (IExternalSystemService service) =>
             {
                 var externalSystems = await service.GetAllAsync();
                 return Results.Ok(externalSystems);
             });
 
             // GET: /api/externalsystem/{externalSystemId}
-            externalSystemGroup.MapGet("/{externalSystemId:string}", async (string externalSystemId, IExternalSystemsService service) =>
+            externalSystemGroup.MapGet("/{externalSystemId:string}", async (string externalSystemId, IExternalSystemService service) =>
             {
                 var externalSystems = await service.GetByIdAsync(externalSystemId);
                 return externalSystems is not null ? Results.Ok(externalSystems) : Results.NotFound();
             });
 
             // POST: /api/externalsystem
-            externalSystemGroup.MapPost("/", async (ExternalSystem externalSystem, IExternalSystemsService service) =>
+            externalSystemGroup.MapPost("/", async (ExternalSystem externalSystem, IExternalSystemService service) =>
             {
                 var createdExternalSystem = await service.CreateAsync(externalSystem);
                 return TypedResults.Created($"/api/workorders/{createdExternalSystem.ExternalSystemId}");
             });
 
             // PUT: /api/site/{externalSystemId}
-            externalSystemGroup.MapPut("/{externalSystemId:string}", async (string externalSystemId, ExternalSystem externalSystem, IExternalSystemsService service) =>
+            externalSystemGroup.MapPut("/{externalSystemId:string}", async (string externalSystemId, ExternalSystem externalSystem, IExternalSystemService service) =>
             {
                 var updatedExternalSystem = await service.UpdateAsync(externalSystemId, externalSystem);
                 return updatedExternalSystem ? Results.NoContent() : Results.NotFound();
             });
 
             // DELETE: /api/externalSystem
-            externalSystemGroup.MapDelete("/{externalSystem:string}", async (string externalSystem, IExternalSystemsService service) =>
+            externalSystemGroup.MapDelete("/{externalSystem:string}", async (string externalSystem, IExternalSystemService service) =>
             {
                 var removedExternalSystem = await service.DeleteAsync(externalSystem);
                 return removedExternalSystem ? Results.NoContent() : Results.NotFound();

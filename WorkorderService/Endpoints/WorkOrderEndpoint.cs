@@ -1,5 +1,5 @@
-﻿using WorkOrderService.Interfaces;
-using WorkOrderService.Models.WorkOrders;
+﻿using DigitalTwin.WebAPI.Interfaces.WorkOrders;
+using DigitalTwin.WebAPI.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -23,35 +23,35 @@ namespace WorkOrderService.Endpoints
                                        .WithTags("WorkOrders");
 
             // GET: /api/workorders
-            workOrderGroup.MapGet("/", async (IWorkOrdersService workOrdersService) =>
+            workOrderGroup.MapGet("/", async (IWorkOrderService workOrdersService) =>
             {
                 var workOrders = await workOrdersService.GetAllAsync();
                 return Results.Ok(workOrders);
             });
 
             // GET: /api/workorders/{workOrderId}
-            workOrderGroup.MapGet("/{workOrderId:string}", async (string workOrderId, IWorkOrdersService service) =>
+            workOrderGroup.MapGet("/{workOrderId:string}", async (string workOrderId, IWorkOrderService service) =>
             {
                 var workOrder = await service.GetByIdAsync(workOrderId);
                 return workOrder is not null ? Results.Ok(workOrder) : Results.NotFound();
             });
 
             // POST: /api/workorders
-            workOrderGroup.MapPost("/", async (WorkOrder workOrder, IWorkOrdersService workOrdersService) =>
+            workOrderGroup.MapPost("/", async (WorkOrder workOrder, IWorkOrderService workOrdersService) =>
             {
                 var createdWorkOrder = await workOrdersService.CreateAsync(workOrder);
                 return TypedResults.Created($"/api/workorders/{createdWorkOrder.WorkOrderId}");
             });
 
             // PUT: /api/workorders/{workOrderId}
-            workOrderGroup.MapPut("/{workOrderId:string}", async (string workOrderId, WorkOrder workOrder, IWorkOrdersService workOrdersService) =>
+            workOrderGroup.MapPut("/{workOrderId:string}", async (string workOrderId, WorkOrder workOrder, IWorkOrderService workOrdersService) =>
             {
                 var updatedWorkOrder = await workOrdersService.UpdateAsync(workOrderId, workOrder);
                 return updatedWorkOrder ? Results.NoContent() : Results.NotFound();
             });
 
             // DELETE: /api/workorders
-            workOrderGroup.MapDelete("/{workOrderId:string}", async (string workOrderId, IWorkOrdersService workOrdersService) =>
+            workOrderGroup.MapDelete("/{workOrderId:string}", async (string workOrderId, IWorkOrderService workOrdersService) =>
             {
                 var removedWorkOrder = await workOrdersService.DeleteAsync(workOrderId);
                 return removedWorkOrder ? Results.NoContent() : Results.NotFound();
