@@ -1579,19 +1579,44 @@
           "build/net8.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "DigitalTwin.WebAPI/1.0.0": {
+      "DigitalTwin.WorkOrderService.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Common.dll": {}
+        }
+      },
+      "DigitalTwin.WorkOrderService.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "DigitalTwin.WorkOrderService.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Models.dll": {}
+        }
+      },
+      "DigitalTwin.WorkOrderService.WebAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "DigitalTwin.WorkOrderService.Common": "1.0.0",
+          "DigitalTwin.WorkOrderService.Models": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.11"
         },
         "compile": {
-          "bin/placeholder/DigitalTwin.WebAPI.dll": {}
+          "bin/placeholder/DigitalTwin.WorkOrderService.WebAPI.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DigitalTwin.WebAPI.dll": {}
+          "bin/placeholder/DigitalTwin.WorkOrderService.WebAPI.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -3539,15 +3564,25 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "DigitalTwin.WebAPI/1.0.0": {
+    "DigitalTwin.WorkOrderService.Common/1.0.0": {
       "type": "project",
-      "path": "../DigitalTwin.WebAPI/DigitalTwin.WebAPI.csproj",
-      "msbuildProject": "../DigitalTwin.WebAPI/DigitalTwin.WebAPI.csproj"
+      "path": "../DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj",
+      "msbuildProject": "../DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj"
+    },
+    "DigitalTwin.WorkOrderService.Models/1.0.0": {
+      "type": "project",
+      "path": "../DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj",
+      "msbuildProject": "../DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj"
+    },
+    "DigitalTwin.WorkOrderService.WebAPI/1.0.0": {
+      "type": "project",
+      "path": "../WorkOrderService/DigitalTwin.WorkOrderService.WebAPI.csproj",
+      "msbuildProject": "../WorkOrderService/DigitalTwin.WorkOrderService.WebAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "DigitalTwin.WebAPI >= 1.0.0",
+      "DigitalTwin.WorkOrderService.WebAPI >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.3.12",
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "Moq >= 4.20.72",
@@ -3563,9 +3598,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj",
-      "projectName": "DigitalTwin.WebAPI.AutomatedTests",
-      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj",
+      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WorkOrderService.WebAPI.AutomatedTests.csproj",
+      "projectName": "DigitalTwin.WorkOrderService.WebAPI.AutomatedTests",
+      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WorkOrderService.WebAPI.AutomatedTests.csproj",
       "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -3590,8 +3625,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj": {
-              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj"
+            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj": {
+              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj"
             }
           }
         }

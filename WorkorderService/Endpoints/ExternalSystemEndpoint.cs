@@ -1,5 +1,6 @@
 ﻿using DigitalTwin.WorkOrderService.Models;
 using DigitalTwin.WorkOrderService.WebAPI.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -23,52 +24,71 @@ namespace DigitalTwin.WorkOrderService.Endpoints
                                   .WithTags("ExternalSystems");
 
             // GET: /api/externalsystem
-            externalSystemGroup.MapGet("/", async (IExternalSystemService service) =>
-            {
-                var externalSystems = await service.GetAllAsync();
-                return Results.Ok(externalSystems);
-            })
+            externalSystemGroup.MapGet("/", GetExternalSystemsAsync)
             .WithName("GetAllExternalSystems");
 
             // GET: /api/externalsystem/{externalSystemId}
-            externalSystemGroup.MapGet("/{externalSystemId:string}", async (string externalSystemId, IExternalSystemService service) =>
-            {
-                var externalSystems = await service.GetByIdAsync(externalSystemId);
-                return externalSystems is not null ? Results.Ok(externalSystems) : Results.NotFound();
-            })
+            externalSystemGroup.MapGet("/{externalSystemId:string}",  GetExternalSystemByIdAsync)
             .WithName("GetExternalSystemById");
 
             // GET: /api/externalsystem
-            externalSystemGroup.MapGet("/", async (string externalSystemCode, IExternalSystemService service) =>
-            {
-                var externalSystem = await service.GetByCodeAsync(externalSystemCode);
-                return Results.Ok(externalSystem);
-            })
+            externalSystemGroup.MapGet("/", GetExternalSystemByCodeAsync)
             .WithName("GetExternalSystemByCode");
 
             // POST: /api/externalsystem
-            externalSystemGroup.MapPost("/", async (ExternalSystem externalSystem, IExternalSystemService service) =>
-            {
-                var createdExternalSystem = await service.CreateAsync(externalSystem);
-                return TypedResults.Created($"/api/workorders/{createdExternalSystem.ExternalSystemId}");
-            })
+            externalSystemGroup.MapPost("/", CreateExternalSystemAsync)
             .WithName("CreateExternalSystem");
 
             // PUT: /api/site/{externalSystemId}
-            externalSystemGroup.MapPut("/{externalSystemId:string}", async (string externalSystemId, ExternalSystem externalSystem, IExternalSystemService service) =>
-            {
-                var updatedExternalSystem = await service.UpdateAsync(externalSystemId, externalSystem);
-                return updatedExternalSystem ? Results.NoContent() : Results.NotFound();
-            })
+            externalSystemGroup.MapPut("/{externalSystemId:string}", UpdateExternalSystemAsync)
             .WithName("UpdateExternalSystem");
 
             // DELETE: /api/externalSystem
-            externalSystemGroup.MapDelete("/{externalSystem:string}", async (string externalSystem, IExternalSystemService service) =>
-            {
-                var removedExternalSystem = await service.DeleteAsync(externalSystem);
-                return removedExternalSystem ? Results.NoContent() : Results.NotFound();
-            })
+            externalSystemGroup.MapDelete("/{externalSystem:string}", DeleteExternalSystemAsync)
             .WithName("DeleteExternalSystem");
+        }
+
+        // This will help with unit testing.
+        // Get All External Systems
+        public static async Task<IResult> GetExternalSystemsAsync(IExternalSystemService service)
+        {
+            var externalSystems = await service.GetAllAsync();
+            return TypedResults.Ok(externalSystems);
+        }
+
+        // Get External System By Id
+        public static async Task<Results<Ok<ExternalSystem>, NotFound>> GetExternalSystemByIdAsync(string externalSystemId, IExternalSystemService service)
+        {
+            var externalSystems = await service.GetByIdAsync(externalSystemId);
+            return externalSystems is not null ? TypedResults.Ok(externalSystems) : TypedResults.NotFound();
+        }
+
+        // Get External System By External System Code
+        public static async Task<Results<Ok<ExternalSystem>, NotFound>> GetExternalSystemByCodeAsync(string externalSystemCode, IExternalSystemService service)
+        {
+            var externalSystem = await service.GetByCodeAsync(externalSystemCode);
+            return TypedResults.Ok(externalSystem);
+        }
+
+        // Create External System
+        public static async Task<IResult> CreateExternalSystemAsync(ExternalSystem externalSystem, IExternalSystemService service)
+        {
+            var createdExternalSystem = await service.CreateAsync(externalSystem);
+            return TypedResults.Created($"/api/externalsystems/{createdExternalSystem.ExternalSystemId}");
+        }
+
+        // Update External System
+        public static async Task<Results<NoContent, NotFound>> UpdateExternalSystemAsync(string externalSystemId, ExternalSystem externalSystem, IExternalSystemService service)
+        {
+            var updatedExternalSystem = await service.UpdateAsync(externalSystemId, externalSystem);
+            return updatedExternalSystem ? TypedResults.NoContent() : TypedResults.NotFound();
+        }
+
+        // Delete External Systems
+        public static async Task<Results<NoContent, NotFound>> DeleteExternalSystemAsync(string externalSystemId, IExternalSystemService service)
+        {
+            var removedExternalSystem = await service.DeleteAsync(externalSystemId);
+            return removedExternalSystem ? TypedResults.NoContent() : TypedResults.NotFound();
         }
     }
 }

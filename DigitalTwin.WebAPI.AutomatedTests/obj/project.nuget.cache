@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fjbMogR+mrY=",
+  "dgSpecHash": "mboebgY3Y8M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj",
+  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WorkOrderService.WebAPI.AutomatedTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deonl\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\deonl\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
