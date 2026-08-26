@@ -1,5 +1,6 @@
 ﻿using DigitalTwin.WebAPI.Interfaces;
 using DigitalTwin.WebAPI.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -23,52 +24,74 @@ namespace DigitalTwin.WebAPI.Endpoints
                                   .WithTags("Sites");
 
             // GET: /api/site
-            siteGroup.MapGet("/", async (ISiteService service) =>
-            {
-                var sites = await service.GetAllAsync();
-                return Results.Ok(sites);
-            })
+            siteGroup.MapGet("/", GetAllSites)
             .WithName("GetAllSites"); 
 
             // GET: /api/site/{siteId}
-            siteGroup.MapGet("/{siteId:string}", async (string siteId, ISiteService service) =>
-            {
-                var site = await service.GetByIdAsync(siteId);
-                return site is not null ? Results.Ok(site) : Results.NotFound();
-            })
+            siteGroup.MapGet("/{siteId:string}", GetSiteById)
             .WithName("GetSiteById");
 
             // GET: /api/site/
-            siteGroup.MapGet("/", async (string siteCode, ISiteService service) =>
-            {
-                var site = await service.GetBySiteCodeAsync(siteCode);
-                return Results.Ok(site);
-            })
+            siteGroup.MapGet("/", GetSiteBySiteCode)
             .WithName("GetSiteBySiteCode");
 
             // POST: /api/site
-            siteGroup.MapPost("/", async (Site site, ISiteService service) =>
-            {
-                var createdSite = await service.CreateAsync(site);
-                return TypedResults.Created($"/api/workorders/{createdSite.SiteId}");
-            })
+            siteGroup.MapPost("/", CreateSite)
             .WithName("CreateSite");
 
             // PUT: /api/site/{siteId}
-            siteGroup.MapPut("/{siteId:string}", async (string siteId, Site site, ISiteService service) =>
-            {
-                var updatedSite = await service.UpdateAsync(siteId, site);
-                return updatedSite ? Results.NoContent() : Results.NotFound();
-            })
+            siteGroup.MapPut("/{siteId:string}", UpdateSite)
             .WithName("UpdateSite");
 
             // DELETE: /api/site
-            siteGroup.MapDelete("/{siteId:string}", async (string siteId, ISiteService service) =>
-            {
-                var removedSite = await service.DeleteAsync(siteId);
-                return removedSite ? Results.NoContent() : Results.NotFound();
-            })
+            siteGroup.MapDelete("/{siteId:string}", DeleteSite)
             .WithName("DeleteSite");
+        }
+
+        // Named static handler method that can be targeted easily by Unit Tests.
+        public static async Task<IResult> GetAllSites(ISiteService service)
+        {
+            var sites = await service.GetAllAsync();
+            return Results.Ok(sites);
+        }
+
+        public static async Task<Results<Ok<Site>, NotFound>> GetSiteById(string siteId, ISiteService service)
+        {
+            var site = await service.GetByIdAsync(siteId);
+
+            if (site is null)
+                return TypedResults.NotFound();
+
+            return TypedResults.Ok(site);
+        }
+
+        public static async Task<IResult> CreateSite(Site site, ISiteService service)
+        {
+            var createdSite = await service.CreateAsync(site);
+            return TypedResults.Created($"/api/sites/{createdSite.SiteId}");
+        }
+
+        // Get Site By Site Code
+        public static async Task<Results<Ok<Site>, NotFound>> GetSiteBySiteCode(string siteCode, ISiteService service)
+        {
+            var site = await service.GetBySiteCodeAsync(siteCode);
+
+            if (site is null)
+                return TypedResults.NotFound();
+
+            return TypedResults.Ok(site);
+        }
+
+        public static async Task<Results<NoContent, NotFound>> UpdateSite(string siteId,  Site site, ISiteService service)
+        {
+            var updatedSite = await service.UpdateAsync(siteId, site);
+            return updatedSite ? TypedResults.NotFound() : TypedResults.NotFound();
+        }
+
+        public static async Task<Results<NoContent, NotFound>> DeleteSite(string siteId, ISiteService service)
+        {
+            var removedSite = await service.DeleteAsync(siteId);
+            return removedSite ? TypedResults.NoContent() : TypedResults.NotFound();
         }
     }
 }

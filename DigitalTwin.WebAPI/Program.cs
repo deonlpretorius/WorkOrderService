@@ -39,7 +39,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Add the endpoints.
+// Add the decoupled endpoints.
 app.MapSiteEndpoints();
 app.MapExternalSystemEndpoint();
 app.MapWorkOrderStatusEndpoints();
