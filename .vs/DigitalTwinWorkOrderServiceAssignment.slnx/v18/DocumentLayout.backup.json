@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DFAA05DA-0603-874E-FF54-058F2509979D}|DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\digitaltwin.webapi.automatedtests\\siteendpointstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFAA05DA-0603-874E-FF54-058F2509979D}|DigitalTwin.WebAPI.AutomatedTests\\DigitalTwin.WebAPI.AutomatedTests.csproj|solutionrelative:digitaltwin.webapi.automatedtests\\siteendpointstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4EE2896-E637-2898-683F-EF069093FB02}|DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\digitaltwin.webapi\\endpoints\\siteendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4EE2896-E637-2898-683F-EF069093FB02}|DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj|solutionrelative:digitaltwin.webapi\\endpoints\\siteendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,56 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SiteEndpointsTests.cs",
-              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\SiteEndpointsTests.cs",
-              "RelativeDocumentMoniker": "DigitalTwin.WebAPI.AutomatedTests\\SiteEndpointsTests.cs",
-              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI.AutomatedTests\\SiteEndpointsTests.cs",
-              "RelativeToolTip": "DigitalTwin.WebAPI.AutomatedTests\\SiteEndpointsTests.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T10:16:11.856Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "572b7e5f-401c-48fe-89ed-a1b6fa1b5788",
-        "Display": 0,
-        "X": 366,
-        "Y": 144,
-        "Width": 943,
-        "Height": 983,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SiteEndpoint.cs",
-              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\Endpoints\\SiteEndpoint.cs",
-              "RelativeDocumentMoniker": "DigitalTwin.WebAPI\\Endpoints\\SiteEndpoint.cs",
-              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\Endpoints\\SiteEndpoint.cs",
-              "RelativeToolTip": "DigitalTwin.WebAPI\\Endpoints\\SiteEndpoint.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T10:15:50.57Z",
-              "EditorCaption": ""
-            }
-          ]
+          "SelectedChildIndex": -1,
+          "Children": []
         }
       ]
     }

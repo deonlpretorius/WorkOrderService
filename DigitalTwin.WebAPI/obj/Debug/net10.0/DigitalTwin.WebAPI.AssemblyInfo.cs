@@ -11,11 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("DigitalTwin.WebAPI")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DigitalTwin.WorkOrderService.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b21ab4358d74117e6d348c4261d4a7a59065deff")]
-[assembly: System.Reflection.AssemblyProductAttribute("DigitalTwin.WebAPI")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ad7dcdbbe1ae25e0a9613383622057bc589ed68")]
+[assembly: System.Reflection.AssemblyProductAttribute("DigitalTwin.WorkOrderService.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigitalTwin.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
