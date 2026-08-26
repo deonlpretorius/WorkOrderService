@@ -1,12 +1,12 @@
-﻿using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Models;
+﻿using DigitalTwin.WorkOrderService.Models;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Services</c> contains the services for the Work Order Service application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Services
+namespace DigitalTwin.WorkOrderService.WebAPI.Services
 {
     /// <summary>
     /// Class <c>SitesService</c> represents the Sites Service.
@@ -20,13 +20,13 @@ namespace DigitalTwin.WebAPI.Services
         /// Property <c>WorkOrderServiceDbContext</c> represents the database context.
         /// <value>A class containing the data access layer.</value>
         /// </summary>
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         /// <summary>
         /// Constructor <c>WorkOrderService</c> is used to instantiate the Work Orders Service.
         /// </summary>
         /// <param name="dbContext">The class representing the database context.</param>
-        public SiteService(WorkOrderServiceDbContext dbContext)
+        public SiteService(WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _dbContext = dbContext;
         }

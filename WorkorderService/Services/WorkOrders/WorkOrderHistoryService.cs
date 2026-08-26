@@ -1,10 +1,10 @@
-﻿using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Enums.WorkOrders;
-using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Enums.WorkOrders;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
-namespace DigitalTwin.WebAPI.Services.WorkOrders
+namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 {
     public class WorkOrderHistoryService : IWorkOrderHistoryService
     {
@@ -12,11 +12,11 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
 
         private readonly IWorkOrderStatusService _workOrderStatusService;
 
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         public WorkOrderHistoryService(IWorkOrderService workOrderService, 
                                        IWorkOrderStatusService workOrderStatusesService, 
-                                       WorkOrderServiceDbContext workOrderServiceDbContext)
+                                       WorkOrderWebServiceWebAPIDbContext workOrderServiceDbContext)
         {
             _workOrderService = workOrderService;
             _workOrderStatusService = workOrderStatusesService;

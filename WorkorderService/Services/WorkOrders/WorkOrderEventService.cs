@@ -1,12 +1,12 @@
-﻿using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Services</c> contains the services for the Work Order Service application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Services.WorkOrders
+namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 {
     /// <summary>
     /// Class <c>SitesService</c> represents the Sites Service.
@@ -44,7 +44,7 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
         /// Property <c>_dbContext</c> represents the data access layer of the application.
         /// <value>A class containing the data access layer context.</value>
         /// </summary>
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         /// <summary>
         /// Constructor <c>WorkOrderEventsService</c> is used to instantiate the work order events service.
@@ -58,7 +58,7 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
                                      IWorkOrderStatusService workOrderStattusesService,
                                      ISiteService sitesService,
                                      IWorkOrderService workOrdersService,
-                                     WorkOrderServiceDbContext dbContext)
+                                     WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _externalSystemsService = externalSystemsService;
             _workOrderStatusService = workOrderStattusesService;
