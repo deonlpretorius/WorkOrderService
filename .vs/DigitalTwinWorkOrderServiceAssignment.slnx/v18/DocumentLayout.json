@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC8FCA33-085E-26C4-DAEA-9BD4E14294FF}|WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\endpoints\\workorders\\workorderendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC8FCA33-085E-26C4-DAEA-9BD4E14294FF}|WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj|solutionrelative:workorderservice\\endpoints\\workorders\\workorderendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkOrderEndpoint.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Endpoints\\WorkOrders\\WorkOrderEndpoint.cs",
+              "RelativeDocumentMoniker": "WorkorderService\\Endpoints\\WorkOrders\\WorkOrderEndpoint.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Endpoints\\WorkOrders\\WorkOrderEndpoint.cs",
+              "RelativeToolTip": "WorkorderService\\Endpoints\\WorkOrders\\WorkOrderEndpoint.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwF4AAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T21:05:18.444Z",
+              "EditorCaption": ""
+            }
+          ]
         }
       ]
     }
