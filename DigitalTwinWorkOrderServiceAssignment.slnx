@@ -5,6 +5,7 @@
   </Configurations>
   <Project Path="DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj" />
   <Project Path="DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj" />
+  <Project Path="DigitalTwin.WebAPI.AutomatedTests/DigitalTwin.WorkOrderService.WebAPI.AutomatedTests.csproj" />
   <Project Path="DigitalTwin.WorkOrderProcessor/DigitalTwin.WorkOrderService.WorkOrderProcessor.csproj">
     <Platform Solution="Release|x64" Project="x64" />
   </Project>

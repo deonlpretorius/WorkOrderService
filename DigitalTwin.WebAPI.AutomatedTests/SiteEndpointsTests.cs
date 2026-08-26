@@ -1,13 +1,13 @@
-﻿using DigitalTwin.WebAPI.Endpoints;
-using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Models;
+﻿using DigitalTwin.WebAPI.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Moq;
+using DigitalTwin.WorkOrderService.WebAPI.Services;
+using DigitalTwin.WorkOrderService.WebAPI.Endpoints;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.WebAPI.AutomatedTests</c> contains the Web API automated test for the application.
 /// </summary>
-namespace DigitalTwin.WebAPI.AutomatedTests
+namespace DigitalTwin.WorkOrderService.WebAPI.AutomatedTests
 {
     public class SiteEndpointsTests
     {

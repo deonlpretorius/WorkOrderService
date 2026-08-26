@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4icRgfhtcpo=",
+  "dgSpecHash": "mdhQwMwSX1U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deonl\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\deonl\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
@@ -55,15 +55,5 @@
     "C:\\Users\\deonl\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
     "C:\\Users\\deonl\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problem reading the cache file C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

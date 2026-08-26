@@ -1110,6 +1110,29 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "DigitalTwin.WorkOrderService.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Common.dll": {}
+        }
+      },
+      "DigitalTwin.WorkOrderService.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "DigitalTwin.WorkOrderService.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.WorkOrderService.Models.dll": {}
+        }
       }
     }
   },
@@ -3206,10 +3229,22 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DigitalTwin.WorkOrderService.Common/1.0.0": {
+      "type": "project",
+      "path": "../DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj",
+      "msbuildProject": "../DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj"
+    },
+    "DigitalTwin.WorkOrderService.Models/1.0.0": {
+      "type": "project",
+      "path": "../DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj",
+      "msbuildProject": "../DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "DigitalTwin.WorkOrderService.Common >= 1.0.0",
+      "DigitalTwin.WorkOrderService.Models >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.11",
       "Microsoft.EntityFrameworkCore >= 10.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.11",
@@ -3224,11 +3259,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj",
-      "projectName": "DigitalTwin.WebAPI",
-      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\DigitalTwin.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj",
+      "projectName": "DigitalTwin.WorkOrderService.WebAPI",
+      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj",
       "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3250,7 +3285,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj": {
+              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj"
+            },
+            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj": {
+              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3731,13 +3773,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WebAPI\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }

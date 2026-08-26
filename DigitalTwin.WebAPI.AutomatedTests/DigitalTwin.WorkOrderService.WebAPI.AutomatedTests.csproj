@@ -5,7 +5,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <AssemblyTitle>DigitalTwin.WorkOrderService.WebAPI.AutomatedTest</AssemblyTitle>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="WorkOrders\**" />
+    <EmbeddedResource Remove="WorkOrders\**" />
+    <None Remove="WorkOrders\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
@@ -17,15 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DigitalTwin.Models\DigitalTwin.WorkOrderService.Models.csproj" />
+    <ProjectReference Include="..\WorkOrderService\DigitalTwin.WorkOrderService.WebAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DigitalTwin.WebAPI\DigitalTwin.WebAPI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="WorkOrders\" />
   </ItemGroup>
 
 </Project>
