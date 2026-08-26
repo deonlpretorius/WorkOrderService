@@ -1,5 +1,5 @@
-﻿using DigitalTwin.WebAPI.Models;
-using DigitalTwin.WebAPI.Models.WorkOrders;
+﻿using DigitalTwin.Models;
+using DigitalTwin.Models.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>

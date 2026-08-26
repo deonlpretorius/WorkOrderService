@@ -1,6 +1,6 @@
-﻿using DigitalTwin.WebAPI.Enums.WorkOrders;
+﻿using DigitalTwin.Enums.WorkOrders;
+using DigitalTwin.Models.WorkOrders;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.

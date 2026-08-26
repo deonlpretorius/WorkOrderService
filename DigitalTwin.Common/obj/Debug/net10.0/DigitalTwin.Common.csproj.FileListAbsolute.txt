@@ -1,0 +1,12 @@
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\bin\Debug\net10.0\DigitalTwin.Common.deps.json
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\bin\Debug\net10.0\DigitalTwin.Common.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\bin\Debug\net10.0\DigitalTwin.Common.pdb
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.AssemblyInfoInputs.cache
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.AssemblyInfo.cs
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.csproj.CoreCompileInputs.cache
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.sourcelink.json
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\refint\DigitalTwin.Common.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\DigitalTwin.Common.pdb
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Common\obj\Debug\net10.0\ref\DigitalTwin.Common.dll

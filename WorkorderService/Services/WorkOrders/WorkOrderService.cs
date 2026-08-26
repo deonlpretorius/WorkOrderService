@@ -1,8 +1,8 @@
-﻿using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Enums.WorkOrders;
+﻿using DigitalTwin.Enums.WorkOrders;
+using DigitalTwin.Models.WorkOrders;
+using DigitalTwin.WebAPI.Data;
 using DigitalTwin.WebAPI.Interfaces;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>

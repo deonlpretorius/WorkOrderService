@@ -1,6 +1,6 @@
-﻿using DigitalTwin.WebAPI.Data;
+﻿using DigitalTwin.Models;
+using DigitalTwin.WebAPI.Data;
 using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>

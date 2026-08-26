@@ -1,7 +1,7 @@
-﻿using DigitalTwin.WebAPI.Models.WorkOrders;
+﻿using DigitalTwin.Models.WorkOrders;
 
 /// <summary>
-/// Namespace <c>WorkOrderService.Interfaces</c> contains the contract for the implementation of CRUD operations for the application.
+/// Namespace <c>DigitalTwin.WebAPI.Interfaces.WorkOrders</c> contains the contract for the implementation of CRUD operations for the application.
 /// </summary>
 namespace DigitalTwin.WebAPI.Interfaces.WorkOrders
 {

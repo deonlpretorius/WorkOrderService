@@ -1110,6 +1110,29 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "DigitalTwin.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/DigitalTwin.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.Common.dll": {}
+        }
+      },
+      "DigitalTwin.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "DigitalTwin.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DigitalTwin.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigitalTwin.Models.dll": {}
+        }
       }
     }
   },
@@ -3206,10 +3229,22 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DigitalTwin.Common/1.0.0": {
+      "type": "project",
+      "path": "../DigitalTwin.Common/DigitalTwin.Common.csproj",
+      "msbuildProject": "../DigitalTwin.Common/DigitalTwin.Common.csproj"
+    },
+    "DigitalTwin.Models/1.0.0": {
+      "type": "project",
+      "path": "../DigitalTwin.Models/DigitalTwin.Models.csproj",
+      "msbuildProject": "../DigitalTwin.Models/DigitalTwin.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "DigitalTwin.Common >= 1.0.0",
+      "DigitalTwin.Models >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.11",
       "Microsoft.EntityFrameworkCore >= 10.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.11",
@@ -3250,7 +3285,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj": {
+              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj"
+            },
+            "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj": {
+              "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,7 +1,7 @@
-﻿using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Enums.WorkOrders;
+﻿using DigitalTwin.Enums.WorkOrders;
+using DigitalTwin.Models.WorkOrders;
+using DigitalTwin.WebAPI.Data;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
@@ -113,7 +113,7 @@ namespace DigitalTwin.WebAPI.Services.WorkOrders
             workOrderStatuses = _dbContext.WorkOrderStatuses.AsEnumerable();
 
             if (!workOrderStatuses.Any())
-                return null;
+                throw new Exception("There were no Work Order Statuses found.");
 
             return workOrderStatuses;
         }

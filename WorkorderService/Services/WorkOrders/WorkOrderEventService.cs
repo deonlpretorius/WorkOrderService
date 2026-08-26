@@ -1,7 +1,7 @@
-﻿using DigitalTwin.WebAPI.Data;
+﻿using DigitalTwin.Models.WorkOrders;
+using DigitalTwin.WebAPI.Data;
 using DigitalTwin.WebAPI.Interfaces;
 using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Services</c> contains the services for the Work Order Service application.

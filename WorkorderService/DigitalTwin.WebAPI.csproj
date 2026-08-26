@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalTwin.Common\DigitalTwin.Common.csproj" />
+    <ProjectReference Include="..\DigitalTwin.Models\DigitalTwin.Models.csproj" />
+  </ItemGroup>
+
 </Project>
