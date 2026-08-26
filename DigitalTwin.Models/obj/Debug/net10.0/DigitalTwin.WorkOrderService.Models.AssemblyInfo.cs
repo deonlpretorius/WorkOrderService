@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DigitalTwin.WorkOrderService.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca3f790b1bd764cd96e4aee6f15740f65a0b3628")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ad7dcdbbe1ae25e0a9613383622057bc589ed68")]
 [assembly: System.Reflection.AssemblyProductAttribute("DigitalTwin.WorkOrderService.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigitalTwin.WorkOrderService.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
