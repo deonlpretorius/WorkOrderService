@@ -1,0 +1,16 @@
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\bin\Debug\net10.0\DigitalTwin.Models.deps.json
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\bin\Debug\net10.0\DigitalTwin.Models.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\bin\Debug\net10.0\DigitalTwin.Models.pdb
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\bin\Debug\net10.0\DigitalTwin.Common.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\bin\Debug\net10.0\DigitalTwin.Common.pdb
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.csproj.AssemblyReference.cache
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.AssemblyInfoInputs.cache
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.AssemblyInfo.cs
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.csproj.CoreCompileInputs.cache
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.sourcelink.json
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalT.E6CA93F0.Up2Date
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\refint\DigitalTwin.Models.dll
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\DigitalTwin.Models.pdb
+C:\Users\deonl\Documents\Coding Projects\DigitalTwin .NET Backend Engineer\WorkOrderService\DigitalTwin.Models\obj\Debug\net10.0\ref\DigitalTwin.Models.dll

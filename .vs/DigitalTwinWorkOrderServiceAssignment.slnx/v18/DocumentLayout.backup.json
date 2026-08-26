@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ECE281BD-8E62-D4A8-174D-D5A00AF4C731}|DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\digitaltwin.workorderprocessor\\workorderprocessorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECE281BD-8E62-D4A8-174D-D5A00AF4C731}|DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.csproj|solutionrelative:digitaltwin.workorderprocessor\\workorderprocessorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkOrderProcessorService.cs",
+              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\WorkOrderProcessorService.cs",
+              "RelativeDocumentMoniker": "DigitalTwin.WorkOrderProcessor\\WorkOrderProcessorService.cs",
+              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\WorkOrderProcessorService.cs",
+              "RelativeToolTip": "DigitalTwin.WorkOrderProcessor\\WorkOrderProcessorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T16:26:20.431Z",
+              "EditorCaption": ""
+            }
+          ]
         }
       ]
     }

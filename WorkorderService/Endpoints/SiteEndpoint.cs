@@ -1,10 +1,10 @@
-﻿using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Models;
+﻿using DigitalTwin.WorkOrderService.Models;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Endpoints</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Endpoints
+namespace DigitalTwin.WorkOrderService.WebAPI.Endpoints
 {
     /// <summary>
     /// Class <c>SiteEndpoint</c> represents the Site Endpoint.
@@ -19,7 +19,7 @@ namespace DigitalTwin.WebAPI.Endpoints
         public static void MapSiteEndpoints(this IEndpointRouteBuilder routes)
         {
             // Makes use of Route Groups for a cleaner API.
-            var siteGroup = routes.MapGroup("/api/site")
+            var siteGroup = routes.MapGroup("/api/sites")
                                   .WithTags("Sites");
 
             // GET: /api/site
