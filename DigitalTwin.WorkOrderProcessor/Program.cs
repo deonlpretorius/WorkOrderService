@@ -1,4 +1,7 @@
-﻿using DigitalTwin.WorkOrderService.WorkOrderProcessor.Data;
+﻿using DigitalTwin.WorkOrderProcessor.Interfaces;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.WorkOrderProcessor.Data;
+using DigitalTwin.WorkOrderService.WorkOrderProcessor.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,13 +17,13 @@ namespace DigitalTwin.WorkOrderService.WorkOrderProcessor
                            .ConfigureServices((context, services) =>
                            {
                                // Register you background worker
-                               services.AddHostedService<WorkOrderService>();
+                               services.AddSingleton<IQueueService<WorkOrderEvent>, QueueService<WorkOrderEvent>>();
+                               services.AddHostedService<WorkOrderProcessorService>();
 
                                // Register your database context here
                                services.AddDbContext<WorkOrderProcessorDbContext>(options =>
                                     options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
-                           })
-                           .Build();
+                           }).Build();
 
             await host.RunAsync();
         }

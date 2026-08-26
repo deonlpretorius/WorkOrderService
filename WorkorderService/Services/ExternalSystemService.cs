@@ -20,13 +20,13 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services
         /// Property <c>WorkOrderServiceDbContext</c> represents the database context.
         /// <value>A class containing the data access layer.</value>
         /// </summary>
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         /// <summary>
         /// Constructor <c>WorkOrderService</c> is used to instantiate the Work Orders Service.
         /// </summary>
         /// <param name="dbContext">The class representing the database context.</param>
-        public ExternalSystemService(WorkOrderServiceDbContext dbContext)
+        public ExternalSystemService(WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _dbContext = dbContext;
         }

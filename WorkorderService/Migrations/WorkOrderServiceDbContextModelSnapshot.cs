@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DigitalTwin.WorkOrderService.WebAPI.Migrations
 {
-    [DbContext(typeof(WorkOrderServiceDbContext))]
+    [DbContext(typeof(WorkOrderWebServiceWebAPIDbContext))]
     partial class WorkOrderServiceDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

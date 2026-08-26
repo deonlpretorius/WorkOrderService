@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj|c:\\users\\deonl\\documents\\coding projects\\digitaltwin .net backend engineer\\workorderservice\\workorderservice\\endpoints\\externalsystemendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10F93218-06EB-1C5F-CF8F-80DC5BA3D91D}|WorkOrderService\\DigitalTwin.WorkOrderService.WebAPI.csproj|solutionrelative:workorderservice\\endpoints\\externalsystemendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,22 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExternalSystemEndpoint.cs",
-              "DocumentMoniker": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Endpoints\\ExternalSystemEndpoint.cs",
-              "RelativeDocumentMoniker": "WorkorderService\\Endpoints\\ExternalSystemEndpoint.cs",
-              "ToolTip": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkorderService\\Endpoints\\ExternalSystemEndpoint.cs",
-              "RelativeToolTip": "WorkorderService\\Endpoints\\ExternalSystemEndpoint.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T16:21:10.232Z",
-              "EditorCaption": ""
-            }
-          ]
+          "SelectedChildIndex": -1,
+          "Children": []
         }
       ]
     }

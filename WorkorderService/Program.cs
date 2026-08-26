@@ -16,7 +16,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
 // Add the DbContext to the service container
-builder.Services.AddDbContext<WorkOrderServiceDbContext>(options =>
+builder.Services.AddDbContext<WorkOrderWebServiceWebAPIDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add the static data services.

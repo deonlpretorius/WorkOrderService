@@ -12,11 +12,11 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 
         private readonly IWorkOrderStatusService _workOrderStatusService;
 
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         public WorkOrderHistoryService(IWorkOrderService workOrderService, 
                                        IWorkOrderStatusService workOrderStatusesService, 
-                                       WorkOrderServiceDbContext workOrderServiceDbContext)
+                                       WorkOrderWebServiceWebAPIDbContext workOrderServiceDbContext)
         {
             _workOrderService = workOrderService;
             _workOrderStatusService = workOrderStatusesService;

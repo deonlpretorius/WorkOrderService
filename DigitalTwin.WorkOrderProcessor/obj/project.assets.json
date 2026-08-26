@@ -2818,9 +2818,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.csproj",
-      "projectName": "DigitalTwin.WorkOrderService",
-      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.csproj",
+      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.WorkOrderProcessor.csproj",
+      "projectName": "DigitalTwin.WorkOrderService.WorkOrderProcessor",
+      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\DigitalTwin.WorkOrderService.WorkOrderProcessor.csproj",
       "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.WorkOrderProcessor\\obj\\",
       "projectStyle": "PackageReference",

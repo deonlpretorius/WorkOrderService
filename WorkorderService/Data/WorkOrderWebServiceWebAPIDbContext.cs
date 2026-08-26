@@ -13,13 +13,13 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Data
     /// Inherits from DbContext <see cref="DbContext"/>
     /// </remarks>
     /// </summary>
-    public class WorkOrderServiceDbContext : DbContext
+    public class WorkOrderWebServiceWebAPIDbContext : DbContext
     {
         /// <summary>
         /// Constructor <c>WorkOrderServiceDbContext</c> is used to instantiate the data access layer with options.
         /// </summary>
         /// <param name="options">The options for the data access layer context.</param>
-        public WorkOrderServiceDbContext(DbContextOptions<WorkOrderServiceDbContext> options) : base(options)
+        public WorkOrderWebServiceWebAPIDbContext(DbContextOptions<WorkOrderWebServiceWebAPIDbContext> options) : base(options)
         {
         }
 

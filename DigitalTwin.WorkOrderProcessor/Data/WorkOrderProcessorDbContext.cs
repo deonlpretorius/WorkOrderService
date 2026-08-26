@@ -16,10 +16,13 @@ namespace DigitalTwin.WorkOrderService.WorkOrderProcessor.Data
     {
         public WorkOrderProcessorDbContext(DbContextOptions<WorkOrderProcessorDbContext> options) : base(options)
         {
-            
         }
 
         public DbSet<WorkOrderEvent> WorkOrderEvents { get; set; }
+
+        public DbSet<WorkOrder> WorkOrders { get; set; }
+
+        public DbSet<WorkOrderHistory> WorkOrderHistories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

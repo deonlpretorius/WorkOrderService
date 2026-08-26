@@ -44,7 +44,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
         /// Property <c>_dbContext</c> represents the data access layer of the application.
         /// <value>A class containing the data access layer context.</value>
         /// </summary>
-        private readonly WorkOrderServiceDbContext _dbContext;
+        private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
         /// <summary>
         /// Constructor <c>WorkOrderEventsService</c> is used to instantiate the work order events service.
@@ -58,7 +58,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
                                      IWorkOrderStatusService workOrderStattusesService,
                                      ISiteService sitesService,
                                      IWorkOrderService workOrdersService,
-                                     WorkOrderServiceDbContext dbContext)
+                                     WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _externalSystemsService = externalSystemsService;
             _workOrderStatusService = workOrderStattusesService;
