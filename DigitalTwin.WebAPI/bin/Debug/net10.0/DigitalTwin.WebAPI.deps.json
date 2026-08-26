@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "DigitalTwin.WebAPI/1.0.0": {
         "dependencies": {
+          "DigitalTwin.Common": "1.0.0",
+          "DigitalTwin.Models": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore.Design": "10.0.11",
@@ -812,6 +814,25 @@
             "fileVersion": "9.0.1125.51716"
           }
         }
+      },
+      "DigitalTwin.Common/1.0.0": {
+        "runtime": {
+          "DigitalTwin.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DigitalTwin.Models/1.0.0": {
+        "dependencies": {
+          "DigitalTwin.Common": "1.0.0"
+        },
+        "runtime": {
+          "DigitalTwin.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1142,6 +1163,16 @@
       "sha512": "sha512-s8yUYuYYu+PAwvBdhLG1KyrGrk9gkYeuPxfAsXsTqqWyepwSyEw8hAaflW4nO98NG52YpYI1am2+9o+79h2RtQ==",
       "path": "system.security.cryptography.protecteddata/9.0.11",
       "hashPath": "system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
+    },
+    "DigitalTwin.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DigitalTwin.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

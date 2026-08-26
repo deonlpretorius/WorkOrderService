@@ -1,10 +1,10 @@
-﻿using DigitalTwin.WebAPI.Enums.WorkOrders;
-using DigitalTwin.WebAPI.Models.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Enums.WorkOrders;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
 
 /// <summary>
-/// Namespace <c>WorkOrderService.Interfaces</c> contains the contract for the implementation of business logic for the application.
+/// Namespace <c>DigitalTwin.WebAPI.Interfaces.WorkOrders</c> contains the contract for the implementation of business logic for the application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Interfaces.WorkOrders
+namespace DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders
 {
     /// <summary>
     /// Interface <c>IWorkOrderStatussService</c> represents the contract for the Work Order Status business logic.
