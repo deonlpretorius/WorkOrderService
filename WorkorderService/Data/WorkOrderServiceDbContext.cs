@@ -1,11 +1,11 @@
-﻿using DigitalTwin.Models;
-using DigitalTwin.Models.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Models;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Data</c> contains the data access layer operations for the Work Order Service application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Data
+namespace DigitalTwin.WorkOrderService.WebAPI.Data
 {
     /// <summary>
     /// Class <c>WorkOrderServiceDbContext</c> represents the database access layer operations.

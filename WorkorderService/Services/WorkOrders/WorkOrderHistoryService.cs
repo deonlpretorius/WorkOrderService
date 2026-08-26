@@ -1,10 +1,10 @@
-﻿using DigitalTwin.Enums.WorkOrders;
-using DigitalTwin.Models.WorkOrders;
-using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Interfaces.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Enums.WorkOrders;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
-namespace DigitalTwin.WebAPI.Services.WorkOrders
+namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 {
     public class WorkOrderHistoryService : IWorkOrderHistoryService
     {

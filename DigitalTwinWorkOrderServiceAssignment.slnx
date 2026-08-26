@@ -3,12 +3,12 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="DigitalTwin.Common/DigitalTwin.Common.csproj" />
-  <Project Path="DigitalTwin.Models/DigitalTwin.Models.csproj" />
-  <Project Path="DigitalTwin.WorkOrderProcessor/DigitalTwin.WorkOrderProcessor.csproj">
+  <Project Path="DigitalTwin.Common/DigitalTwin.WorkOrderService.Common.csproj" />
+  <Project Path="DigitalTwin.Models/DigitalTwin.WorkOrderService.Models.csproj" />
+  <Project Path="DigitalTwin.WorkOrderProcessor/DigitalTwin.WorkOrderService.csproj">
     <Platform Solution="Release|x64" Project="x64" />
   </Project>
-  <Project Path="WorkOrderService/DigitalTwin.WebAPI.csproj">
+  <Project Path="WorkOrderService/DigitalTwin.WorkOrderService.WebAPI.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
 </Solution>

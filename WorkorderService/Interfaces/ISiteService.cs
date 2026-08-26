@@ -1,9 +1,9 @@
-﻿using DigitalTwin.Models;
+﻿using DigitalTwin.WorkOrderService.Models;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.WebAPI.Interfaces</c> contains the contract for the implementation of CRUD operations for the application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Interfaces
+namespace DigitalTwin.WorkOrderService.WebAPI.Interfaces
 {
     /// <summary>
     /// Interface <c>ISitesService</c> represents the contract for the Site business logic.

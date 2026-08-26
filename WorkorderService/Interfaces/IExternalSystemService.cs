@@ -1,8 +1,9 @@
-﻿using DigitalTwin.Models;
+﻿using DigitalTwin.WorkOrderService.Models;
+
 /// <summary>
 /// Namespace <c> DigitalTwin.WebAPI.Interfaces</c> contains the contract for the implementation of business logic for the application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Interfaces
+namespace DigitalTwin.WorkOrderService.WebAPI.Interfaces
 {
     /// <summary>
     /// Interface <c>IExternalSystemsService</c> represents the contract for the External System business logic.

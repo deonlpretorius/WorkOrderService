@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj",
-      "projectName": "DigitalTwin.Common",
-      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj",
+      "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj",
+      "projectName": "DigitalTwin.WorkOrderService.Common",
+      "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj",
       "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\obj\\",
       "projectStyle": "PackageReference",

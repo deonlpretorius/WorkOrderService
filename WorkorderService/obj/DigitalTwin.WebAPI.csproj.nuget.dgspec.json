@@ -4,12 +4,12 @@
     "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\WorkOrderService\\DigitalTwin.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj": {
+    "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj",
-        "projectName": "DigitalTwin.Common",
-        "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj",
+        "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj",
+        "projectName": "DigitalTwin.WorkOrderService.Common",
+        "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj",
         "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\obj\\",
         "projectStyle": "PackageReference",
@@ -346,12 +346,12 @@
         }
       }
     },
-    "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj": {
+    "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj",
-        "projectName": "DigitalTwin.Models",
-        "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj",
+        "projectUniqueName": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj",
+        "projectName": "DigitalTwin.WorkOrderService.Models",
+        "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj",
         "packagesPath": "C:\\Users\\deonl\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\obj\\",
         "projectStyle": "PackageReference",
@@ -376,8 +376,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj": {
-                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj"
+              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj": {
+                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj"
               }
             }
           }
@@ -722,11 +722,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj": {
-                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj"
+              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj": {
+                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj"
               },
-              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj": {
-                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.Models.csproj"
+              "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj": {
+                "projectPath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Models\\DigitalTwin.WorkOrderService.Models.csproj"
               }
             }
           }

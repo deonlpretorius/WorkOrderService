@@ -1,11 +1,11 @@
-using DigitalTwin.Endpoints;
-using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Endpoints;
-using DigitalTwin.WebAPI.Endpoints.WorkOrders;
-using DigitalTwin.WebAPI.Interfaces;
-using DigitalTwin.WebAPI.Interfaces.WorkOrders;
-using DigitalTwin.WebAPI.Services;
-using DigitalTwin.WebAPI.Services.WorkOrders;
+using DigitalTwin.WorkOrderService.Endpoints;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Endpoints;
+using DigitalTwin.WorkOrderService.WebAPI.Endpoints.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Services;
+using DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

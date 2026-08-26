@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DigitalTwin.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.Models</c> contains the data models that represent the database tables for the application.
 /// </summary>
-namespace DigitalTwin.Models
+namespace DigitalTwin.WorkOrderService.Models
 {
     /// <summary>
     /// Class <c>SiteCode</c> represents the Sites table.

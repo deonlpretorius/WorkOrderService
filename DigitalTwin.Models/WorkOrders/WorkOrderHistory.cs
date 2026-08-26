@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// <summary>
 /// Namespace <c>DigitalTwin.Models.WorkOrders</c> contains the data models that represent the database tables.
 /// </summary>
-namespace DigitalTwin.Models.WorkOrders
+namespace DigitalTwin.WorkOrderService.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrdersHistory</c> represents the work orders history table.

@@ -1,11 +1,11 @@
-﻿using DigitalTwin.Enums.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Enums.WorkOrders;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.Models.WorkOrders</c> contains the Work Order data models that represent the database tables.
 /// </summary>
-namespace DigitalTwin.Models.WorkOrders
+namespace DigitalTwin.WorkOrderService.Models.WorkOrders
 {
     /// <summary>
     /// Class <c>WorkOrderStatus</c> represents the work orders status table.

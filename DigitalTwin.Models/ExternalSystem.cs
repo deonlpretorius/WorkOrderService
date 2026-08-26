@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DigitalTwin.Models.WorkOrders;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.Models</c> contains the data models that represent the database tables.
 /// </summary>
-namespace DigitalTwin.Models
+namespace DigitalTwin.WorkOrderService.Models
 {
     /// <summary>
     /// Class <c>ExternalSystem</c> represetns the external systems table.

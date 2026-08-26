@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a8GIDt3J3eg=",
+  "dgSpecHash": "WaRodVNZW/A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.Common.csproj",
+  "projectFilePath": "C:\\Users\\deonl\\Documents\\Coding Projects\\DigitalTwin .NET Backend Engineer\\WorkOrderService\\DigitalTwin.Common\\DigitalTwin.WorkOrderService.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

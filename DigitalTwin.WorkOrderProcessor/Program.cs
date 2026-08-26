@@ -1,11 +1,10 @@
-﻿
-using DigitalTwin.WorkOrderProcessor.Data;
+﻿using DigitalTwin.WorkOrderService.WorkOrderProcessor.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DigitalTwin.WorkOrderProcessor
+namespace DigitalTwin.WorkOrderService.WorkOrderProcessor
 {
     public class Program
     {
@@ -15,7 +14,7 @@ namespace DigitalTwin.WorkOrderProcessor
                            .ConfigureServices((context, services) =>
                            {
                                // Register you background worker
-                               services.AddHostedService<WorkOrderProcessorWorker>();
+                               services.AddHostedService<WorkOrderService>();
 
                                // Register your database context here
                                services.AddDbContext<WorkOrderProcessorDbContext>(options =>

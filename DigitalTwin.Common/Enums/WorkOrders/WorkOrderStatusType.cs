@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Namespace <c>DigitalTwin.Enums.WorkOrders</c> contains the enumerations for the application.
 /// </summary>
-namespace DigitalTwin.Enums.WorkOrders
+namespace DigitalTwin.WorkOrderService.Enums.WorkOrders
 {
     /// <summary>
     /// Enum <c>WorkOrderStatusType</c> represents the status of a work order.

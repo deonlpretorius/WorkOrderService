@@ -1,13 +1,13 @@
-﻿using DigitalTwin.Enums.WorkOrders;
-using DigitalTwin.Models.WorkOrders;
-using DigitalTwin.WebAPI.Data;
-using DigitalTwin.WebAPI.Interfaces.WorkOrders;
+﻿using DigitalTwin.WorkOrderService.Enums.WorkOrders;
+using DigitalTwin.WorkOrderService.Models.WorkOrders;
+using DigitalTwin.WorkOrderService.WebAPI.Data;
+using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Namespace <c>WorkOrderService.Services</c> contains the services for the Work Order Service application.
 /// </summary>
-namespace DigitalTwin.WebAPI.Services.WorkOrders
+namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 {
     /// <summary>
     /// Class <c>SitesService</c> represents the Sites Service.
