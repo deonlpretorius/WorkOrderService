@@ -1,5 +1,6 @@
 ﻿using DigitalTwin.WorkOrderService.Models.WorkOrders;
 using DigitalTwin.WorkOrderService.WebAPI.Interfaces.WorkOrders;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 /// <summary>
 /// Namespace <c>DigitalTwin.WebAPI.Endpoints.WorkOrders</c> contains the HTTP Endpoints and Route Groupings for the Work Order Service application.
@@ -23,28 +24,38 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Endpoints.WorkOrders
                                             .WithTags("WorkOrderEvents");
 
             // GET: /api/workorderevents
-            workOrderEventGroup.MapGet("/", async (IWorkOrderEventService service) =>
-            {
-                var workOrderEvents = await service.GetAllAsync();
-                return Results.Ok(workOrderEvents);
-            })
+            workOrderEventGroup.MapGet("/", GetAllWorkOrderEventsAsync)
             .WithName("GetAllWorkOrderEvents");
 
             // GET: /api/workorderevents/{workordereventId}
-            workOrderEventGroup.MapGet("/", async (string workOrderEventId, IWorkOrderEventService service) =>
-            {
-                var workOrderEvent = await service.GetByIdAsync(workOrderEventId);
-                return workOrderEvent is not null ? Results.Ok(workOrderEvent) : Results.NotFound();
-            })
+            workOrderEventGroup.MapGet("/", GetWorkOrderEventsAsync)
             .WithName("GetWorkOrderEventById");
 
             // POST: /api/workorderevents
-            workOrderEventGroup.MapPost("/", async (WorkOrderEvent workOrderEvent, IWorkOrderEventService service) => 
-            {
-                var createdWorkOrderEvent = await service.CreateAsync(workOrderEvent);
-                return TypedResults.Created($"/api/workorders/{createdWorkOrderEvent.SiteId}");
-            })
+            workOrderEventGroup.MapPost("/", CreateWorkOrderEventAsync)
             .WithName("CreateWorkOrderEvent");
+        }
+
+        // This makes it easier for unit testing.
+        // Get All Work Order Events.
+        public static async Task<IResult> GetAllWorkOrderEventsAsync(IWorkOrderEventService service)
+        {
+            var workOrderEvents = await service.GetAllAsync();
+            return TypedResults.Ok(workOrderEvents);
+        }
+
+        // Get Work Orders Events By Id
+        public static async Task<Results<Ok<WorkOrderEvent>, NotFound>> GetWorkOrderEventsAsync(string workOrderEventId, IWorkOrderEventService service)
+        {
+            var workOrderEvent = await service.GetByIdAsync(workOrderEventId);
+            return workOrderEvent is not null ? TypedResults.Ok(workOrderEvent) : TypedResults.NotFound();
+        }
+
+        // Create Work Order Event
+        public static async Task<IResult> CreateWorkOrderEventAsync(WorkOrderEvent workOrderEvent, IWorkOrderEventService service)
+        {
+            var createdWorkOrderEvent = await service.CreateAsync(workOrderEvent);
+            return TypedResults.Created($"/api/workordersevent/{createdWorkOrderEvent.SiteId}");
         }
     }
 }
