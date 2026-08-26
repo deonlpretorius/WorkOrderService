@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DigitalTwin.WorkOrderService.WebAPI.AutomatedTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97e71e540567213008cc5906bd1d6f732a1666f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb69d2ea4d949fd7f04d522dc2faeb3db60a4b2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DigitalTwin.WorkOrderService.WebAPI.AutomatedTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigitalTwin.WorkOrderService.WebAPI.AutomatedTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
