@@ -8,17 +8,13 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 {
     public class WorkOrderHistoryService : IWorkOrderHistoryService
     {
-        private readonly IWorkOrderService _workOrderService;
-
         private readonly IWorkOrderStatusService _workOrderStatusService;
 
         private readonly WorkOrderWebServiceWebAPIDbContext _dbContext;
 
-        public WorkOrderHistoryService(IWorkOrderService workOrderService, 
-                                       IWorkOrderStatusService workOrderStatusesService, 
+        public WorkOrderHistoryService(IWorkOrderStatusService workOrderStatusesService, 
                                        WorkOrderWebServiceWebAPIDbContext workOrderServiceDbContext)
         {
-            _workOrderService = workOrderService;
             _workOrderStatusService = workOrderStatusesService;
             _dbContext = workOrderServiceDbContext;
         }
@@ -45,7 +41,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (string.IsNullOrWhiteSpace(workOrderHistory.WorkOrderId))
                 throw new Exception("The work order is empty.");
 
-            var workOrder = _workOrderService.GetById(workOrderHistory.WorkOrderId);
+            var workOrder = _dbContext.WorkOrders.Find(workOrderHistory.WorkOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not found.");
 
@@ -81,7 +77,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (string.IsNullOrWhiteSpace(workOrderHistory.WorkOrderId))
                 throw new Exception("The work order is empty.");
 
-            var workOrder = await _workOrderService.GetByIdAsync(workOrderHistory.WorkOrderId);
+            var workOrder = await _dbContext.WorkOrders.FindAsync(workOrderHistory.WorkOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not found.");
 
@@ -153,7 +149,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 
         public IEnumerable<WorkOrderHistory> GetByWorkOrderId(string workOrderId)
         {
-            var workOrder = _workOrderService.GetById(workOrderId);
+            var workOrder = _dbContext.WorkOrders.Find(workOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not be found.");
 
@@ -166,7 +162,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
 
         public async Task<IEnumerable<WorkOrderHistory>> GetByWorkOrderIdAsync(string workOrderId)
         {
-            var workOrder = await _workOrderService.GetByIdAsync(workOrderId);
+            var workOrder = await _dbContext.WorkOrders.FindAsync(workOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not be found.");
 
@@ -183,7 +179,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (workOrderStatus is null)
                 throw new Exception("The work order status could not be found.");
 
-            var workOrder = _workOrderService.GetById(workOrderId);
+            var workOrder = _dbContext.WorkOrders.Find(workOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not be found.");
 
@@ -203,7 +199,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (workOrderStatus is null)
                 throw new Exception("The work order status could not be found.");
 
-            var workOrder = await _workOrderService.GetByIdAsync(workOrderId);
+            var workOrder = await _dbContext.WorkOrders.FindAsync(workOrderId);
             if (workOrder is null)
                 throw new Exception("The work order could not be found.");
 

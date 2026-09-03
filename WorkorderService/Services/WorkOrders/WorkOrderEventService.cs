@@ -35,12 +35,6 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
         private readonly ISiteService _sitesService;
 
         /// <summary>
-        /// Property <c>_workOrdersService</c> represents the work order service for data access layer operations.
-        /// <value>An interface representing the contract for the work order data access layer operations.</value>
-        /// </summary>
-        private readonly IWorkOrderService _workOrdersService;
-
-        /// <summary>
         /// Property <c>_dbContext</c> represents the data access layer of the application.
         /// <value>A class containing the data access layer context.</value>
         /// </summary>
@@ -57,13 +51,11 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
         public WorkOrderEventService(IExternalSystemService externalSystemsService,
                                      IWorkOrderStatusService workOrderStattusesService,
                                      ISiteService sitesService,
-                                     IWorkOrderService workOrdersService,
                                      WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _externalSystemsService = externalSystemsService;
             _workOrderStatusService = workOrderStattusesService;
             _sitesService = sitesService;
-            _workOrdersService = workOrdersService;
             _dbContext = dbContext;
         }
 
@@ -119,7 +111,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (string.IsNullOrWhiteSpace(workOrderEvent.WorkOrderId))
                 throw new Exception("The work order has not been selected or is empty for this work order event.");
 
-            var workOrder = _workOrdersService.GetById(workOrderEvent.WorkOrderId);
+            var workOrder = _dbContext.WorkOrders.Find(workOrderEvent.WorkOrderId);
             if (workOrder is null)
                 throw new Exception("he work order does not exist for this work order event.");
 
@@ -184,7 +176,7 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             if (string.IsNullOrWhiteSpace(workOrderEvent.WorkOrderId))
                 throw new Exception("The work order has not been selected or is empty for this work order event.");
 
-            var workOrder = await _workOrdersService.GetByIdAsync(workOrderEvent.WorkOrderId);
+            var workOrder = await _dbContext.WorkOrders.FindAsync(workOrderEvent.WorkOrderId);
             if (workOrder is null)
                 throw new Exception("he work order does not exist for this work order event.");
 
