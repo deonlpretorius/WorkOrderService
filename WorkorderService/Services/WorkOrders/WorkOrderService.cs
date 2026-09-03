@@ -37,12 +37,6 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
         private readonly IExternalSystemService _externalSystemsService;
 
         /// <summary>
-        /// Property <c>_workOrderHistoryService</c> represents the Work Order History service.
-        /// <value>An interface representing the contract for the work order history service.</value>
-        /// </summary>
-        private readonly IWorkOrderHistoryService _workOrderHistoryService;
-
-        /// <summary>
         /// Property <c>WorkOrderServiceDbContext</c> represents the database context.
         /// <value>A class containing the data access layer.</value>
         /// </summary>
@@ -55,13 +49,11 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
         public WorkOrderService(IWorkOrderStatusService workOrderStatusesService, 
                                 ISiteService sitesService, 
                                 IExternalSystemService externalSystemsService,
-                                IWorkOrderHistoryService workOrderHistoryService,
                                 WorkOrderWebServiceWebAPIDbContext dbContext)
         {
             _workOrderStatusService = workOrderStatusesService;
             _sitesService = sitesService;
             _externalSystemsService = externalSystemsService;
-            _workOrderHistoryService = workOrderHistoryService;
             _dbContext = dbContext;
         }
 
@@ -218,9 +210,9 @@ namespace DigitalTwin.WorkOrderService.WebAPI.Services.WorkOrders
             {
                 foreach (var workOrder in workOrders)
                 {
-                    var workOrderHistories = _workOrderHistoryService.GetByWorkOrderId(workOrder?.WorkOrderId)
-                                                                     .Take(10)
-                                                                     .ToList();
+                    var workOrderHistories = _dbContext.WorkOrderHistories.Where(x => x.WorkOrderId!.Equals(workOrder.WorkOrderId))
+                                                 .Take(10)
+                                                 .ToList();
 
                     workOrder.WorkOrderHistories = workOrderHistories;
                 }
